@@ -33,11 +33,13 @@ def train_model(train_texts, train_labels):
     return nlp
 
 
-def run(user_input):
-    # Treinando os modelos
+def setup_model():
     nlp_study = train_model(train_texts, study_labels)
     nlp_prof = train_model(train_texts, prof_labels)
+    return nlp_study, nlp_prof
 
+
+def run(user_input, nlp_study, nlp_prof):
     # Testando os modelos
     # user_input = "I have been doing researches about some planets and stuff"
     doc_study = nlp_study(user_input)
