@@ -1,6 +1,6 @@
 train_texts = []
 train_texts.extend([
-    # Workers em Ecology
+    # ecology workers
     "I work in a wildlife rehabilitation center caring for injured animals.",
     "My daily tasks involve monitoring air and water quality in the city.",
     "I assist in maintaining the local community garden to promote biodiversity.",
@@ -52,7 +52,7 @@ train_texts.extend([
     "Cleaning up the local beach this weekend, so much plastic to pick up!",
     "Working at the wildlife rehab center, got to feed baby raccoons today!",
 
-    # Cientistas/Estudantes em Ecology
+    # ecology scientists and students
     "I'm researching the impact of invasive species on native wildlife.",
     "I study the effects of pollutants on aquatic life in freshwater lakes.",
     "I am conducting a study on the effects of urbanization on local biodiversity.",
@@ -100,11 +100,11 @@ train_texts.extend([
     "My research involves analyzing the impact of mining activities on the quality of surrounding water bodies.",
     "I am investigating the effects of habitat loss on the population dynamics of endangered species.",
     "Currently, I am studying the role of environmental governance in promoting sustainable development.",
-    "Diving deep into marine bio homework, the ocean’s complexity is mind-blowing!",
+    "Diving deep into marine bio homework, the ocean's complexity is mind-blowing!",
     "In the lab studying soil samples, these tiny organisms do so much!",
     "Field trip to the forest reserve tomorrow, ready to hug some trees and take notes!",
 
-    # Workers em Space
+    # space workers
     "I assist in the assembly of satellite components.",
     "My job is to weld parts for spacecraft.",
     "I handle the calibration of space navigation instruments.",
@@ -146,17 +146,17 @@ train_texts.extend([
     "I work on the assembly and testing of space vehicle propulsion systems.",
     "I assist in the development and implementation of space mission training programs.",
     "Got a gig at the planetarium, guiding folks through the stars!",
-    "Building satellites ain’t easy, but someone’s gotta do it!",
+    "Building satellites ain't easy, but someone's gotta do it!",
     "Launching rockets at the space center today, fingers crossed!",
     "Fixing space suits, preparing astronauts for the big journey!",
     "Working late at the telescope factory, crafting lenses for clear sky views!",
-    "Installing solar panels on satellites, harnessing the sun’s power!",
-    "Maintaining the space shuttle, it’s older than me but still going strong!",
+    "Installing solar panels on satellites, harnessing the sun's power!",
+    "Maintaining the space shuttle, it's older than me but still going strong!",
     "On duty at the space museum, inspiring the next generation of explorers!",
     "Assembling parts for the international space station, precision is key!",
     "Monitoring satellite signals, keeping an eye on Earth from above!",
 
-    # Cientistas/Estudantes em Space
+    # space scientists and students
     "I'm conducting research on the effects of zero gravity on the human body.",
     "Currently working on a thesis about sustainable life support systems in space.",
     "I'm developing algorithms for efficient satellite data processing and analysis.",
@@ -208,7 +208,7 @@ train_texts.extend([
     "Working on my thesis about Martian landscapes, so much to explore and discover!",
     "Just got access to the observatory for my research, the universe is calling!",
 
-    # Workers em Health
+    # health workers
     "I work at a community health center providing support to patients.",
     "My job involves organizing health awareness campaigns in schools.",
     "I assist in the administration of vaccines at a local clinic.",
@@ -260,7 +260,7 @@ train_texts.extend([
     "Spent the day assisting in surgeries, saving lives one operation at a time!",
     "Delivering meals to patients today, everyone needs some good nourishment!",
 
-    # Cientistas/Estudantes em Health
+    # health scientists and students
     "I'm conducting research on the development of new vaccines and treatments.",
     "As a medical student, I'm learning about various diseases and their management.",
     "I'm involved in a study exploring the mental health impacts of social isolation.",
@@ -306,13 +306,13 @@ train_texts.extend([
     "I'm involved in a project to improve the health and well-being of individuals with disabilities.",
     "Diving deep into medical journals tonight, gotta unlock the secrets of these new viruses!",
     "In the lab, brewing up some potential cures. Fingers crossed!",
-    "Studying the effects of diet on mental health, and it’s mind-blowing stuff!",
+    "Studying the effects of diet on mental health, and it's mind-blowing stuff!",
     "Late night in the bio lab, studying cell regeneration. Science is wild!",
     "Cracking the books on genetic disorders today. So much to learn!",
     "Experimenting with new health tech to monitor patient vitals remotely. The future is now!",
     "Working on a thesis about the impact of exercise on chronic diseases. Sweat is just fat crying, right?",
 
-    # Workers em Climate
+    # climate workers
     "I work on installing and maintaining renewable energy systems to combat climate change.",
     "My job involves analyzing climate data to help companies reduce their carbon footprint.",
     "I work with communities to develop and implement climate adaptation strategies.",
@@ -358,13 +358,13 @@ train_texts.extend([
     "Planting trees today at work, because Mother Earth needs more green!",
     "Busy day ahead, working on setting up a community garden to promote sustainability.",
     "Got my hands dirty creating a rain garden at work to reduce stormwater runoff!",
-    "Helping businesses reduce their carbon footprint is all in a day’s work for me.",
+    "Helping businesses reduce their carbon footprint is all in a day's work for me.",
     "Spent the day weatherizing homes to save energy and combat climate change!",
     "Working hard to improve public transit options, because fewer cars mean cleaner air!",
     "Installing wind turbines today, harnessing that powerful breeze for clean energy!",
     "At work, turning waste into energy and feeling like a climate change superhero!",
 
-    # Cientistas/Estudantes em Climate
+    # climate scientists and students
     "I am researching the impact of climate change on polar ice melt and sea level rise.",
     "My study focuses on the effects of global warming on biodiversity and ecosystems.",
     "I am investigating the role of deforestation in altering the Earth's climate.",
@@ -411,23 +411,23 @@ train_texts.extend([
     "My work involves analyzing the effectiveness of economic instruments for climate change mitigation and adaptation.",
     "I am researching the role of innovation and entrepreneurship in promoting climate action and sustainability.",
     "My study is focused on understanding the impact of climate change on infrastructure and built environment.",
-    "I’m diving deep into climate studies, trying to figure out how we can chill with the rising temps!",
+    "I'm diving deep into climate studies, trying to figure out how we can chill with the rising temps!",
     "Just exploring how these crazy hurricanes are getting pumped by climate change. Research mode on!",
     "Working on my thesis about how climate change is messing with our beloved coffee beans. The struggle is real!",
-    "Studying glaciers today. They’re like, 'We’re melting!', and I’m like, 'Hold on, I’m trying to save you!'"
+    "Studying glaciers today. They're like, 'We're melting!', and I'm like, 'Hold on, I'm trying to save you!'"
 ])
 
 prof_labels = []
 
-# Adicionando 50 workers
+# adding 50 workers
 worker_label = {"cats": {"Worker": 1.0, "Scientist": 0.0}}
 prof_labels.extend([worker_label] * 50)
 
-# Adicionando 50 scientists
+# adding 50 scientists
 scientist_label = {"cats": {"Worker": 0.0, "Scientist": 1.0}}
 prof_labels.extend([scientist_label] * 50)
 
-# Repetindo o processo conforme necessário
+# repeting the process as needed
 prof_labels.extend([worker_label] * 50)
 prof_labels.extend([scientist_label] * 50)
 prof_labels.extend([worker_label] * 50)
@@ -437,18 +437,22 @@ prof_labels.extend([scientist_label] * 50)
 
 study_labels = []
 
-# Adicionando 100 Ecology
-ecology_label = {"cats": {"Ecology": 1.0, "Space": 0.0, "Health": 0.0, "Climate": 0.0}}
+# adding 100 ecology
+ecology_label = {"cats": {"Ecology": 1.0,
+                          "Space": 0.0, "Health": 0.0, "Climate": 0.0}}
 study_labels.extend([ecology_label] * 100)
 
-# Adicionando 100 Space
-space_label = {"cats": {"Ecology": 0.0, "Space": 1.0, "Health": 0.0, "Climate": 0.0}}
+# adding 100 space
+space_label = {"cats": {"Ecology": 0.0,
+                        "Space": 1.0, "Health": 0.0, "Climate": 0.0}}
 study_labels.extend([space_label] * 100)
 
-# Adicionando 100 Health
-health_label = {"cats": {"Ecology": 0.0, "Space": 0.0, "Health": 1.0, "Climate": 0.0}}
+# adding 100 health
+health_label = {"cats": {"Ecology": 0.0,
+                         "Space": 0.0, "Health": 1.0, "Climate": 0.0}}
 study_labels.extend([health_label] * 100)
 
-# Adicionando 100 Climate
-climate_label = {"cats": {"Ecology": 0.0, "Space": 0.0, "Health": 0.0, "Climate": 1.0}}
+# adding 100 climate
+climate_label = {"cats": {"Ecology": 0.0,
+                          "Space": 0.0, "Health": 0.0, "Climate": 1.0}}
 study_labels.extend([climate_label] * 100)

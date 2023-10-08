@@ -21,14 +21,13 @@ def train_model(train_texts, train_labels):
 
     random.seed(1)
     spacy.util.fix_random_seed(2)
-    optimizer = nlp.begin_training()
+    nlp.begin_training()
 
     for epoch in range(15):
         random.shuffle(train_examples)
         losses = {}
         for batch in spacy.util.minibatch(train_examples, size=32):
             nlp.update(batch, drop=0.3, losses=losses)
-        print(losses)
 
     return nlp
 
@@ -39,13 +38,12 @@ def setup_model():
     return nlp_study, nlp_prof
 
 
-def run(user_input, nlp_study, nlp_prof):
-    # Testando os modelos
-    # user_input = "I have been doing researches about some planets and stuff"
-    doc_study = nlp_study(user_input)
-    doc_prof = nlp_prof(user_input)
+def run(input_query, nlp_study, nlp_prof):
+    # testing the models
+    doc_study = nlp_study(input_query)
+    doc_prof = nlp_prof(input_query)
 
-    # Obtendo a categoria com a maior probabilidade para cada modelo
+    # getting the maximum category for each model
     max_study_category = get_max_category(doc_study.cats)
     max_prof_category = get_max_category(doc_prof.cats)
-    return jsonify({"input": user_input.lower(), "study": max_study_category.lower(), "profession": max_prof_category.lower()})
+    return jsonify({"input": input_query, "study": max_study_category, "profession": max_prof_category})
