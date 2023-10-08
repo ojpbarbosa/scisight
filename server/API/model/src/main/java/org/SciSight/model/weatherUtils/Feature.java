@@ -1,4 +1,4 @@
-package org.SciSight.model.weather;
+package org.SciSight.model.weatherUtils;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;

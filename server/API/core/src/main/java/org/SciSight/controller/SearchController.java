@@ -21,8 +21,8 @@ public class SearchController {
 
     private final DataItemService dataItemService;
 
-    @GetMapping("/{field}")
-    public ResponseEntity<DataItem> get(@PathVariable("field") final String field) {
+    @GetMapping("/{fieldOfStudy}")
+    public ResponseEntity<DataItem> get(@PathVariable("fieldOfStudy") final String field) {
         counter("search.api.get").increment();
         log.info("Accessing /search with field: " + field);
         var dataItem = dataItemService.getByField(field).orElse(null);
@@ -35,8 +35,8 @@ public class SearchController {
 
     @GetMapping("/test")
     public ResponseEntity<String> test() {
-      log.info("Test endpoint accessed");
-      return ResponseEntity.ok("Test successful");
+        log.info("Test endpoint accessed");
+        return ResponseEntity.ok("Test successful");
     }
 
 }

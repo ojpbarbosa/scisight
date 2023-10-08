@@ -1,6 +1,5 @@
 package org.SciSight.client;
 
-import com.fasterxml.jackson.databind.DeserializationFeature;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.SciSight.model.Weather;
@@ -19,21 +18,22 @@ import java.util.Optional;
 @Component
 @Slf4j
 @RequiredArgsConstructor
-public class WeatherClient {
+public class WeatherClient extends CustomHttpClient {
     private static HttpClient httpClient = HttpClient.newHttpClient();
-    private static ObjectMapper objectMapper = new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+    private final ObjectMapper objectMapper;
     @Value("${api.weather.token}")
     private String authToken;
     @Value("${api.weather.url}")
     private String baseUrl;
 
-    public Optional<Weather> getWeatherAlert(final String state) {
+    @Override
+    public Optional<Weather> get() {
         try {
             URI uri = new URIBuilder()
                     .setScheme("https")
                     .setHost(baseUrl)
                     .setPath("/alerts/active")
-                    .setParameter("area", state)
+                    .setParameter("area", "NY")
                     .build();
 
             HttpRequest request = HttpRequest.newBuilder()
