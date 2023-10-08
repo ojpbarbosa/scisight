@@ -52,7 +52,7 @@ train_texts.extend([
     "Cleaning up the local beach this weekend, so much plastic to pick up!",
     "Working at the wildlife rehab center, got to feed baby raccoons today!",
 
-    # ecology scientists and students
+    # ecology researchers
     "I'm researching the impact of invasive species on native wildlife.",
     "I study the effects of pollutants on aquatic life in freshwater lakes.",
     "I am conducting a study on the effects of urbanization on local biodiversity.",
@@ -156,7 +156,7 @@ train_texts.extend([
     "Assembling parts for the international space station, precision is key!",
     "Monitoring satellite signals, keeping an eye on Earth from above!",
 
-    # space scientists and students
+    # space researchers
     "I'm conducting research on the effects of zero gravity on the human body.",
     "Currently working on a thesis about sustainable life support systems in space.",
     "I'm developing algorithms for efficient satellite data processing and analysis.",
@@ -260,7 +260,7 @@ train_texts.extend([
     "Spent the day assisting in surgeries, saving lives one operation at a time!",
     "Delivering meals to patients today, everyone needs some good nourishment!",
 
-    # health scientists and students
+    # health researchers
     "I'm conducting research on the development of new vaccines and treatments.",
     "As a medical student, I'm learning about various diseases and their management.",
     "I'm involved in a study exploring the mental health impacts of social isolation.",
@@ -364,7 +364,7 @@ train_texts.extend([
     "Installing wind turbines today, harnessing that powerful breeze for clean energy!",
     "At work, turning waste into energy and feeling like a climate change superhero!",
 
-    # climate scientists and students
+    # climate researchers
     "I am researching the impact of climate change on polar ice melt and sea level rise.",
     "My study focuses on the effects of global warming on biodiversity and ecosystems.",
     "I am investigating the role of deforestation in altering the Earth's climate.",
@@ -420,11 +420,11 @@ train_texts.extend([
 occupation_labels = []
 
 # adding 50 workers
-worker_label = {"cats": {"Worker": 1.0, "Scientist": 0.0}}
+worker_label = {"cats": {"Worker": 1.0, "Researcher": 0.0}}
 occupation_labels.extend([worker_label] * 50)
 
-# adding 50 scientists
-scientist_label = {"cats": {"Worker": 0.0, "Scientist": 1.0}}
+# adding 50 researchers
+scientist_label = {"cats": {"Worker": 0.0, "Researcher": 1.0}}
 occupation_labels.extend([scientist_label] * 50)
 
 # repeting the process as needed
