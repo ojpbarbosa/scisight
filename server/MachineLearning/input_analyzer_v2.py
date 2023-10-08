@@ -1,14 +1,15 @@
-import os
 import spacy
 from spacy.training.example import Example
-import random
 from flask import jsonify
+
+import random
+import os
+
 from ml_model_v2 import social_field_labels, use_api_labels, social_context_labels, train_texts
+from util import get_result_by_max, create_model_cache, load_model_cache
 
-MODEL_DIR = 'saved_models'
+MODEL_DIR = "cache/v2"
 
-def get_result_by_max(cats):
-    return max(cats, key=cats.get)
 
 def train_model(train_texts, train_labels, learning_rate=0.001):
     nlp = spacy.blank("en")
@@ -20,7 +21,8 @@ def train_model(train_texts, train_labels, learning_rate=0.001):
     optimizer.learn_rate = learning_rate
 
     train_data = list(zip(train_texts, train_labels))
-    train_examples = [Example.from_dict(nlp.make_doc(text), annotations) for text, annotations in train_data]
+    train_examples = [Example.from_dict(nlp.make_doc(
+        text), annotations) for text, annotations in train_data]
 
     random.seed(1)
     spacy.util.fix_random_seed(32)
@@ -33,34 +35,31 @@ def train_model(train_texts, train_labels, learning_rate=0.001):
 
     return nlp
 
-def save_model(nlp, model_name):
-    if not os.path.exists(MODEL_DIR):
-        os.makedirs(MODEL_DIR)
-    nlp.to_disk(os.path.join(MODEL_DIR, model_name))
-
-def load_model(model_name):
-    return spacy.load(os.path.join(MODEL_DIR, model_name))
 
 def setup_models():
-    if not os.path.exists(os.path.join(MODEL_DIR, 'social_field')):
-        social_field_nlp = train_model(train_texts, social_field_labels, learning_rate=0.001)
-        save_model(social_field_nlp, 'social_field')
+    if not os.path.exists(os.path.join(MODEL_DIR, "social_field")):
+        social_field_nlp = train_model(
+            train_texts, social_field_labels, learning_rate=0.001)
+        create_model_cache(social_field_nlp, MODEL_DIR, "social_field")
     else:
-        social_field_nlp = load_model('social_field')
+        social_field_nlp = load_model_cache(MODEL_DIR, "social_field")
 
-    if not os.path.exists(os.path.join(MODEL_DIR, 'use_api')):
-        use_api_nlp = train_model(train_texts, use_api_labels, learning_rate=0.001)
-        save_model(use_api_nlp, 'use_api')
+    if not os.path.exists(os.path.join(MODEL_DIR, "use_api")):
+        use_api_nlp = train_model(
+            train_texts, use_api_labels, learning_rate=0.001)
+        create_model_cache(use_api_nlp, MODEL_DIR, "use_api")
     else:
-        use_api_nlp = load_model('use_api')
+        use_api_nlp = load_model_cache(MODEL_DIR, "use_api")
 
-    if not os.path.exists(os.path.join(MODEL_DIR, 'social_context')):
-        social_context_nlp = train_model(train_texts, social_context_labels, learning_rate=0.001)
-        save_model(social_context_nlp, 'social_context')
+    if not os.path.exists(os.path.join(MODEL_DIR, "social_context")):
+        social_context_nlp = train_model(
+            train_texts, social_context_labels, learning_rate=0.001)
+        create_model_cache(social_context_nlp, MODEL_DIR, "social_context")
     else:
-        social_context_nlp = load_model('social_context')
+        social_context_nlp = load_model_cache(MODEL_DIR, "social_context")
 
     return social_field_nlp, use_api_nlp, social_context_nlp
+
 
 def run(input_query, social_field_nlp, use_api_nlp, social_context_nlp):
     doc_field = social_field_nlp(input_query)

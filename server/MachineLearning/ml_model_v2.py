@@ -1,5 +1,4 @@
-train_texts = []
-train_texts.extend([
+train_texts = [
     # Space data from INDIVIDUAL space field
     "Can you provide me with recent satellite data? I'm conducting research in space science.",
     "I need information on the current positions of satellites for my studies in aerospace.",
@@ -1311,7 +1310,7 @@ train_texts.extend([
     "We're a group of healthcare diversity and inclusion advocates looking for strategies for promoting diversity in healthcare.",
     "Our team, working on healthcare marketing, needs information on effective marketing and communication strategies for health services.",
     "We're a group of health system analysts looking for data on health system performance and improvement strategies."
-])
+]
 
 social_field_labels = []
 use_api_labels = []
