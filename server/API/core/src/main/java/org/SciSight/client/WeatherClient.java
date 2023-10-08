@@ -42,9 +42,7 @@ public class WeatherClient {
 
             HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
 
-            //Map<String, Object> responseData = objectMapper.readValue(response.body(), Map.class);
             Weather weather = objectMapper.readValue(response.body(), Weather.class);
-            log.info(weather.toString());
             return Optional.of(weather);
         } catch (Exception e) {
             e.printStackTrace();

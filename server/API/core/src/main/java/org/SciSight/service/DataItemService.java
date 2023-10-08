@@ -18,10 +18,8 @@ public class DataItemService {
     private final Wrapper wrapper;
 
     public Optional<DataItem> getByField(String field){
-        log.info("entrou service");
         Optional<Weather> weatherObj = weatherClient.getWeatherAlert(field);
         if (weatherObj.isEmpty()) Optional.empty();
-        log.info("Vai dar resposta do service");
         return wrapper.convert(weatherObj.get());
     }
 

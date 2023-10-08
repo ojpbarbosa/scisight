@@ -7,10 +7,10 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 
 @SpringBootApplication
 @EnableConfigurationProperties({SpringConfig.class})
-public class Main {
+public class Application {
     public static void main(String[] args) {
         try {
-            SpringApplication.run(Main.class, args);
+            SpringApplication.run(Application.class, args);
         } catch (Throwable t) {
             t.printStackTrace();
             throw t;
