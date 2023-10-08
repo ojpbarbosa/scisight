@@ -15,8 +15,8 @@ import java.util.List;
 @NoArgsConstructor
 @With
 public class NASAEvents {
-  private String title;
-  private String description;
-  private String link;
-  private List<NASAEvent> events;
+    private String title;
+    private String description;
+    private String link;
+    private List<NASAEvent> events;
 }

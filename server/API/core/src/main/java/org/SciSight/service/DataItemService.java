@@ -7,6 +7,7 @@ import org.SciSight.client.NASAClient;
 import org.SciSight.client.WeatherClient;
 import org.SciSight.model.DataItem;
 import org.SciSight.model.NASAEvents;
+import org.SciSight.model.RequestModel;
 import org.SciSight.model.Weather;
 import org.SciSight.utils.Wrapper;
 import org.springframework.stereotype.Component;
@@ -20,9 +21,15 @@ public class DataItemService {
     private final WeatherClient weatherClient;
     private final NASAClient nasaClient;
     private final Wrapper wrapper;
+    private final RelatedInfo relatedInfo;
 
-    public Optional<DataItem> getByField(String field){
-        return checkStudyField(field);
+    public Optional<DataItem> getByField(String field, RequestModel requestModel){
+        Optional<DataItem> dataItem = checkStudyField(field);
+
+        if(dataItem.isEmpty()) return dataItem;
+        relatedInfo.getRelatedScientificInfo(dataItem.get(), requestModel);
+
+        return dataItem;
     }
 
     private Optional<DataItem> checkStudyField(String field) {
@@ -30,9 +37,9 @@ public class DataItemService {
             case "ecology", "health":
 
               break;
-            case "space":
+            case "nasa":
               return get(nasaClient, "nasa");
-            case "climate":
+            case "weather":
               return get(weatherClient, "weather");
             default:
               log.error("Field {} is not recognized!", field);
