@@ -4,7 +4,7 @@ from flask_cors import CORS
 from input_analyzer import setup_model, run
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "*"}})
+CORS(app)
 
 nlp_study, nlp_prof = setup_model()
 
