@@ -1,7 +1,7 @@
 import TextTransition, { presets } from 'react-text-transition'
 import { CgSpinner } from 'react-icons/cg'
 
-import { getFieldMetadata, getOccupationMetadata } from '@/library/metadata'
+import { getFieldMetadata, getContextMetadata as getContextMetadata } from '@/library/metadata'
 import { Badge } from '@/components/ui/badge'
 import { Skeleton } from '@/components/ui/skeleton'
 import { useEffect, useState } from 'react'
@@ -11,14 +11,14 @@ const TEXTS = ['Mapping data', 'Looking for societal benefit', 'Analyzing datase
 export default function Loading({
   predictedQuery
 }: {
-  predictedQuery: { occupation: string; field: string; input: string }
+  predictedQuery: { api: string; field: string; context: string; input: string }
 }) {
   const [index, setIndex] = useState(0)
 
   useEffect(() => {
     const interval = setInterval(
       () => setIndex((index) => index + 1),
-      2000 // 2 seconds
+      2 * 1000 // 2 seconds
     )
 
     return () => clearTimeout(interval)
@@ -26,7 +26,7 @@ export default function Loading({
 
   return (
     <div className="flex h-screen flex-col items-center justify-center gap-y-4">
-      <CgSpinner fontSize={52} className="animate-spin -mt-20" />
+      <CgSpinner fontSize={52} className="animate-spin -mt-20 text-primary" />
       <h2 className="text-4xl font-bold transition-colors duration-3000">
         <TextTransition springConfig={presets.default}>
           {TEXTS[index % TEXTS.length]}
@@ -39,13 +39,13 @@ export default function Loading({
       {predictedQuery.input ? (
         <>
           <Badge
-            className="rounded-full text-base font-normal text-neutral-400 bg-[#202020]/40 py-1 px-3"
+            className="rounded-full text-base font-normal dark:text-neutral-400 bg-neutral-400/10 dark:bg-[#202020]/40 py-1 px-3"
             variant="outline"
           >
             {predictedQuery.input}
           </Badge>
           <div className="flex flex-row items-center justify-center gap-x-4">
-            {getOccupationMetadata(predictedQuery.occupation)}
+            {getContextMetadata(predictedQuery.context)}
             {getFieldMetadata(predictedQuery.field)}
           </div>
         </>

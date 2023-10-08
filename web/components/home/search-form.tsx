@@ -19,14 +19,23 @@ import { Button } from '@/components/ui/button'
 import { cn } from '@/library/utilities'
 import { Badge } from '@/components/ui/badge'
 import { api } from '@/library/api'
+import { useEffect, useState } from 'react'
 
 const formSchema = z.object({
-  query: z.string().min(40, {
-    message: 'Search query must be at least 40 characters long.'
-  })
+  query: z
+    .string()
+    .min(30, {
+      message: 'Search query must be at least 30 characters long.'
+    })
+    .max(200, {
+      message: 'Search query must be less than 200 characters long.'
+    })
 })
 
 export default function SearchForm({ className }: { className?: string }) {
+  const [searchPlaceholder, setSearchplaceHolder] = useState('')
+  const [supriseQuery, setSupriseQuery] = useState('')
+
   const { push } = useRouter()
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -36,13 +45,21 @@ export default function SearchForm({ className }: { className?: string }) {
     }
   })
 
+  useEffect(() => {
+    async function fetchData() {
+      setSearchplaceHolder((await api.ml.fetchRandomTrainTexts('v1', 1)) as string)
+      setSupriseQuery((await api.ml.fetchRandomTrainTexts('v2', 1)) as string)
+    }
+
+    fetchData()
+  }, [])
+
   async function supriseMe() {
-    const trainText = await api.ml.fetchRandomTrainTexts(1)
-    push(`/search?q=${trainText[0]}`)
+    push(`/search?query=${supriseQuery}`)
   }
 
   function onSubmit({ query }: z.infer<typeof formSchema>) {
-    push(`/search?q=${query}`)
+    push(`/search?query=${query}`)
   }
 
   return (
@@ -60,22 +77,22 @@ export default function SearchForm({ className }: { className?: string }) {
             name="query"
             render={({ field }) => (
               <FormItem className="flex flex-col items-start space-y-3">
-                <FormDescription className="text-base">
-                  Learn anything based on science.
+                <FormDescription className="text-base text-primary">
+                  <span className="text-primary">Learn anything based on science.</span>
                 </FormDescription>
                 <FormMessage className="text-base text-[#FA00FF]/70 font-normal" />
                 <FormControl>
                   <Input
-                    placeholder="My work involves analyzing the effectiveness of economic instruments for climate change mitigation and adaptation."
-                    className="sm:w-[23.5rem] w-72 h-10 text-base flex items-center active:ring-[#6C5CC2] active:border-[#6C5CC2] bg-[#202020]/40"
+                    placeholder={searchPlaceholder}
                     {...field}
+                    className="sm:w-[23.5rem] w-72 h-10 text-base flex items-center active:ring-[#6C5CC2] active:border-[#6C5CC2]"
                   />
                 </FormControl>
               </FormItem>
             )}
           />
           <Button
-            className="text-white text-2xl h-10 p-1 border-[#0D9A9A] bg-[#202020]/40 hover:bg-[#0D9A9A]/40"
+            className="hover:text-[#0D9A9A] text-[#0D9A9A] border-[#0D9A9A] text-2xl h-10 p-1 bg-neutral-400/10 hover:bg-[#0D9A9A]/20 hover:dark:bg-[#0D9A9A]/20"
             variant="outline"
             type="submit"
           >
@@ -86,10 +103,10 @@ export default function SearchForm({ className }: { className?: string }) {
         </form>
       </Form>
       <Badge
-        className="rounded-full text-base font-normal text-neutral-400 border-[#6C5CC2] bg-[#202020]/40 py-1 px-3"
+        className="rounded-full text-base font-normal border-[#6C5CC2] bg-neutral-400/10 dark:bg-neutral-400/10 py-1 px-3"
         variant="outline"
       >
-        Not sure what to search?
+        <span className="text-neutral-500 dark:text-neutral-400">Not sure what to search?</span>
         <Button className="text-[#6C5CC2] text-base p-0 h-0 ml-1" variant="link">
           <span onClick={supriseMe}>Surprise me!</span>
         </Button>

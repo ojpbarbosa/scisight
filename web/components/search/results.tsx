@@ -1,29 +1,36 @@
-import { getFieldMetadata, getOccupationMetadata } from '@/library/metadata'
-import { Badge } from '@/components/ui/badge'
-import { Skeleton } from '@/components/ui/skeleton'
-import SearchForm from '@/components/home/search-form'
+import type { Dispatch, SetStateAction } from 'react'
 
-export default function Loading({
-  predictedQuery
+import { getFieldMetadata, getContextMetadata } from '@/library/metadata'
+import { Skeleton } from '@/components/ui/skeleton'
+import SearchForm from './search-form'
+import type { PredictedMetadata, SearchResult } from '@/library/api'
+
+export default function Results({
+  predictedQuery,
+  setPredictedQuery,
+  searchResult,
+  setSearchResult
 }: {
-  predictedQuery: { occupation: string; field: string; input: string }
+  predictedQuery: PredictedMetadata
+  setPredictedQuery: Dispatch<SetStateAction<PredictedMetadata>>
+  searchResult: SearchResult
+  setSearchResult: Dispatch<SetStateAction<SearchResult>>
 }) {
   return (
     <div className="flex h-screen flex-col items-center justify-start p-10 gap-y-4">
-      {/* improve */}
-      <SearchForm />
       {predictedQuery.input ? (
         <>
-          <Badge
-            className="rounded-full text-base font-normal text-neutral-400 bg-[#202020]/40 py-1 px-3"
-            variant="outline"
-          >
-            {predictedQuery.input}
-          </Badge>
+          <SearchForm
+            predictedQuery={predictedQuery}
+            setPredictedQuery={setPredictedQuery}
+            setSearchResult={setSearchResult}
+          />
           <div className="flex flex-row items-center justify-center gap-x-4">
-            {getOccupationMetadata(predictedQuery.occupation)}
+            {getContextMetadata(predictedQuery.context)}
             {getFieldMetadata(predictedQuery.field)}
           </div>
+          {/* todo: health doesnt work, show toast or message telling user about it. */}
+          <h1>{searchResult.bestAPIsOptions[0].api}</h1>
         </>
       ) : (
         <>
