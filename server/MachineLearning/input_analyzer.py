@@ -2,6 +2,7 @@ import spacy
 from spacy.training.example import Example
 import random
 from ml_model import prof_labels, study_labels, train_texts
+from flask import jsonify
 
 def get_max_category(cats):
     return max(cats, key=cats.get)
@@ -28,18 +29,17 @@ def train_model(train_texts, train_labels):
     
     return nlp
 
-# Treinando os modelos
-nlp_study = train_model(train_texts, study_labels)
-nlp_prof = train_model(train_texts, prof_labels)
+def run(user_input):
+    # Treinando os modelos
+    nlp_study = train_model(train_texts, study_labels)
+    nlp_prof = train_model(train_texts, prof_labels)
 
-# Testando os modelos
-test_text = "I have been doing researches about some planets and stuff"
-doc_study = nlp_study(test_text)
-doc_prof = nlp_prof(test_text)
+    # Testando os modelos
+    user_input = "I have been doing researches about some planets and stuff"
+    doc_study = nlp_study(user_input)
+    doc_prof = nlp_prof(user_input)
 
-# Obtendo a categoria com a maior probabilidade para cada modelo
-max_study_category = get_max_category(doc_study.cats)
-max_prof_category = get_max_category(doc_prof.cats)
-
-print("Study:", max_study_category)
-print("Profession:", max_prof_category)
+    # Obtendo a categoria com a maior probabilidade para cada modelo
+    max_study_category = get_max_category(doc_study.cats)
+    max_prof_category = get_max_category(doc_prof.cats)
+    return jsonify({"Input": user_input,"Study": max_study_category, "Profession": max_prof_category})
