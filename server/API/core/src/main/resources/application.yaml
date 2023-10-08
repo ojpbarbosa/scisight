@@ -10,7 +10,7 @@ management:
 spring:
   config:
     activate:
-      on-profile: default, local
+      on-profile: default
   application:
     name: scisight
 
