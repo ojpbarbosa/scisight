@@ -9,8 +9,8 @@ from ml_model import train_texts
 app = Flask(__name__)
 CORS(app)
 
-field_nlp, occupation_nlp = input_analyzer.setup_models()
-social_field_nlp, use_api_nlp, social_context_nlp = input_analyzer_v2.setup_models()
+field_nlp, occupation_nlp = None, None
+social_field_nlp, use_api_nlp, social_context_nlp = None, None, None
 
 
 @app.route("/api/v1/predict", methods=["POST"])
@@ -18,6 +18,10 @@ def v1_predict():
     try:
         data = request.get_json()
         query = data["query"]
+
+        if field_nlp is None or occupation_nlp is None:
+            return jsonify({"error": "Models not initialized yet"})
+
         return input_analyzer.run(query, field_nlp, occupation_nlp)
     except Exception as e:
         return jsonify({"error": str(e)})
@@ -28,6 +32,10 @@ def v2_predict():
     try:
         data = request.get_json()
         query = data["query"]
+
+        if social_field_nlp is None or use_api_nlp is None or social_context_nlp is None:
+            return jsonify({"error": "Models not initialized yet"})
+
         return input_analyzer_v2.run(query, social_field_nlp, use_api_nlp, social_context_nlp)
     except Exception as e:
         return jsonify({"error": str(e)})
@@ -52,4 +60,10 @@ def random_train_texts():
 
 
 if __name__ == "__main__":
+    field_nlp, occupation_nlp = input_analyzer.setup_models()
+    print('v1 ready!')
+
+    social_field_nlp, use_api_nlp, social_context_nlp = input_analyzer_v2.setup_models()
+    print('v2 ready!')
+
     app.run(debug=True)
