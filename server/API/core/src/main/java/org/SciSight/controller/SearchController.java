@@ -24,9 +24,7 @@ public class SearchController {
     @RequestMapping(method = RequestMethod.GET, value = "/{field}", produces = "application/json")
     public ResponseEntity<DataItem> get(@PathVariable("field") final String field) {
         counter("search.api.get").increment();
-        log.info("entrou api");
         var dataItem = dataItemService.getByField(field).orElse(null);
-        log.info("Vai dar resposta da api");
         if (dataItem == null) {
             return ResponseEntity.notFound().header("reason", "error").build();
         } else {
