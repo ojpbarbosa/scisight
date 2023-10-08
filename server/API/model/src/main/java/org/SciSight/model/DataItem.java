@@ -6,5 +6,7 @@ import lombok.Data;
 @Data
 @Builder
 public class DataItem {
+    private String type;
     private Weather weather;
+    private NASAEvents nasaEvents;
 }

@@ -17,7 +17,7 @@ spring:
 
 api:
   nasa:
-    url:
+    url: eonet.gsfc.nasa.gov
     token:
   weather:
     url: api.weather.gov

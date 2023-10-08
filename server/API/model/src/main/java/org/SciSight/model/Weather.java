@@ -5,7 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.With;
-import org.SciSight.model.weather.Feature;
+import org.SciSight.model.weatherUtils.Feature;
 
 import java.util.List;
 
