@@ -14,7 +14,7 @@ social_field_nlp, use_api_nlp, social_context_nlp = input_analyzer_v2.setup_mode
 
 
 @app.route("/api/v1/predict", methods=["POST"])
-def predict():
+def v1_predict():
     try:
         data = request.get_json()
         query = data["query"]
@@ -24,7 +24,7 @@ def predict():
 
 
 @app.route("/api/v2/predict", methods=["POST"])
-def predict():
+def v2_predict():
     try:
         data = request.get_json()
         query = data["query"]
