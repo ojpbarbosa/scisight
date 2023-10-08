@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- INCLUDE -DLog4jContextSelector=org.apache.logging.log4j.core.async.AsyncLoggerContextSelector in JVM options-->
+<Configuration status="WARN" monitorInterval="30" shutdownHook="disable">
+    <Properties>
+        <Property name="DEFAULT_PATTERN">[%date{YYYY-dd-MM'T'HH:mm:ss.SSSZ}] [%-5level] [%c{1}] %msg %mdc%n</Property>
+        <Property name="COLOR_PATTERN">%d{yyyy-MM-dd HH:mm:ss.SSS} %highlight{${LOG_LEVEL_PATTERN:-%5p}}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=green, TRACE=green} %style{${sys:PID}}{magenta} --- [%15.15t] %style{%-40.40c{1.}}{cyan} : %m%n%ex</Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="CONSOLE" target="SYSTEM_OUT">
+            <PatternLayout pattern="${COLOR_PATTERN}"/>
+        </Console>
+
+        <Async name="ASYNC" includeLocation="true">
+            <AppenderRef ref="CONSOLE"/>
+        </Async>
+    </Appenders>
+
+    <Loggers>
+        <AsyncLogger name="org.scisight" level="INFO"/>
+        <Root level="WARN">
+            <AppenderRef ref="ASYNC"/>
+        </Root>
+    </Loggers>
+
+</Configuration>

@@ -1,0 +1,24 @@
+management:
+  server:
+    port: 8081
+  endpoints:
+    web:
+      base-path: /
+      exposure:
+        include: health,info,metrics,env,prometheus
+---
+spring:
+  config:
+    activate:
+      on-profile: default, local
+  application:
+    name: scisight
+
+
+api:
+  nasa:
+    url:
+    token:
+  weather:
+    url: api.weather.gov
+    token:
