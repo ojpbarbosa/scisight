@@ -54,4 +54,4 @@ def run(input_query, social_field_nlp, use_api_nlp, social_context_nlp):
     max_api_category = get_max_category(doc_api.cats)
     max_context_category = get_max_category(doc_context.cats)
 
-    return jsonify({"field": max_field_category, "api": max_api_category, "context": max_context_category})
+    return jsonify({"input": input_query, "field": max_field_category, "api": max_api_category, "context": max_context_category})
