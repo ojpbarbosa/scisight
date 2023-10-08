@@ -1,6 +1,6 @@
 train_texts = []
 train_texts.extend([
-#### Space data from INDIVIDUAL space field
+    # Space data from INDIVIDUAL space field
     "Can you provide me with recent satellite data? I'm conducting research in space science.",
     "I need information on the current positions of satellites for my studies in aerospace.",
     "For my research in astrobiology, could you share the latest discoveries about life in space?",
@@ -73,7 +73,7 @@ train_texts.extend([
     "I need the recent developments in space medicine for my ongoing research in astronaut health and performance.",
 
 
-#### Space data from COMMUNITY space field
+    # Space data from COMMUNITY space field
     "We're a group of researchers studying satellite technology; can you provide us with recent developments in satellite communication?",
     "My team and I work on astrobiology. Could you share recent discoveries regarding potential life on Mars?",
     "We're studying the effects of space travel on the human body and would appreciate any recent data you have on this.",
@@ -146,7 +146,7 @@ train_texts.extend([
     "Our research team is working on space instrument development; could you share recent instruments developed and their applications?",
 
 
-#### Space data from INDIVIDUAL climate field
+    # Space data from INDIVIDUAL climate field
     "Can you provide recent satellite data? I’m conducting climate research and need information on atmospheric conditions observed from space.",
     "I'm a meteorologist studying long-term climate patterns. Could I have the latest data on space weather?",
     "I work in climatology. Could you share the latest images of Earth taken from space?",
@@ -219,7 +219,7 @@ train_texts.extend([
     "I’m researching climate impact assessment and need satellite images and data for evaluating climate change effects on various regions.",
 
 
-#### Space data from COMMUNITY climate field
+    # Space data from COMMUNITY climate field
     "Our team of climatologists needs the most recent data on solar radiation for ongoing research. Can you provide it?",
     "We are environmental scientists researching the impact of space weather on Earth's climate and would appreciate your latest findings.",
     "Our group works on climate change mitigation and is interested in recent satellite data regarding Earth's atmosphere.",
@@ -292,7 +292,7 @@ train_texts.extend([
     "As a group working on climate change resilience, we require recent satellite data on areas vulnerable to climate change impacts.",
 
 
-#### Space data from INDIVIDUAL health field
+    # Space data from INDIVIDUAL health field
     "Can you provide the latest data on how space travel impacts human health? I’m working in the field of health sciences.",
     "I study the psychological effects of isolation. Could you share findings on astronaut mental health during space missions?",
     "I’m researching the physiological changes in the human body in space; can I have recent data from astronauts' health monitoring?",
@@ -364,7 +364,7 @@ train_texts.extend([
     "Could you provide information on the ethical considerations and dilemmas in healthcare and medical research in space?",
     "I study behavioral health and am interested in habits, routines, and lifestyle practices of astronauts in space.",
 
-#### Space data from COMMUNITY health field
+    # Space data from COMMUNITY health field
     "Our healthcare team requires information on how extended space travel impacts human physiology; could you provide recent findings?",
     "We are a group of psychologists studying the mental health of astronauts during missions; can you share your latest research?",
     "Our team is researching the effects of zero gravity on muscle atrophy; we need recent data from space agencies.",
@@ -437,7 +437,7 @@ train_texts.extend([
     "We are a healthcare research team studying health promotion strategies for astronauts; could you provide insights?",
 
 
-#### Climate data from INDIVIDUAL space field
+    # Climate data from INDIVIDUAL space field
     "As an astronomer, I'm researching on atmospheric changes; can you provide data on how climate change affects the clarity of the night sky?",
     "Working in satellite technology, I'd like to understand the impacts of climate change on satellite communication.",
     "As a space scientist, I'm interested in the similarities between Earth's climate dynamics and those of other planets.",
@@ -510,7 +510,7 @@ train_texts.extend([
     "As a researcher in space mission design, I require data on how climate change affects the design considerations for future space missions.",
 
 
-#### Climate data from COMMUNITY space field
+    # Climate data from COMMUNITY space field
     "My team and I are working on a satellite project and we need updated data on the Earth’s atmospheric composition; can you assist?",
     "We’re a group of astrophysicists seeking recent information on solar radiation's effects on the climate for our research.",
     "Our research group in astrobiology needs current climate data to understand potential extraterrestrial life conditions.",
@@ -583,7 +583,7 @@ train_texts.extend([
     "My colleagues and I are studying space stuff and we need eath's climate info"
 
 
-#### Climate data from INDIVIDUAL climate field
+    # Climate data from INDIVIDUAL climate field
     "As a climate scientist, I’m seeking data on the recent trends in global temperature anomalies; could you provide this information?",
     "Working in atmospheric sciences, I would appreciate any updated data on carbon dioxide concentrations in the atmosphere.",
     "I'm studying oceanography, and I need the most recent information on sea level rise due to climate change.",
@@ -656,7 +656,7 @@ train_texts.extend([
     "As a researcher studying the impact of climate change on human security, I need data on how climate change is affecting security risks and how security policies are adapting.",
 
 
-#### Climate data from COMMUNITY climate field
+    # Climate data from COMMUNITY climate field
     "We are climatologists working on atmospheric dynamics and need precise data on how space weather influences Earth's climate. Can you assist?",
     "Our meteorology team requires updated data on the impact of solar radiation on global temperatures for our ongoing climate study.",
     "As researchers in climate modeling, we need information on how cosmic events might influence climate variables to improve our predictions.",
@@ -729,7 +729,7 @@ train_texts.extend([
     "We work on climate and digital technology, needing data on how digital technologies are used to monitor and respond to space weather and climate change.",
 
 
-#### Climate data from INDIVIDUAL health field
+    # Climate data from INDIVIDUAL health field
     "As a public health researcher, I’m looking for data on how climate change is affecting the spread of vector-borne diseases; could you assist?",
     "I’m a healthcare provider in need of information on the impacts of extreme weather events on community health services.",
     "Working on mental health, I am seeking data on how climate change-induced stresses and anxieties are affecting mental health statistics.",
@@ -802,7 +802,7 @@ train_texts.extend([
     "Working in medical imaging, I am interested in how climate change might indirectly affect diagnostic imaging practices and interpretations.",
 
 
-#### Climate data from COMMUNITY health field.
+    # Climate data from COMMUNITY health field.
     "We are a team of epidemiologists and need data on how space weather influences climate patterns that affect the spread of infectious diseases.",
     "As healthcare providers, we require information on how climate variations caused by space weather impact patient health.",
     "Our group of nutritionists is researching how space weather affecting climate influences the nutritional value of crops.",
@@ -875,7 +875,7 @@ train_texts.extend([
     "Our group working on health and social innovation needs information on social innovation for health in response to climate changes due to space weather.",
 
 
-#### Health data from INDIVIDUAL space field
+    # Health data from INDIVIDUAL space field
     "Working in astrophysics, I am inquiring about the effects of space travel on human health. Can you provide relevant information?",
     "As an aerospace engineer, I need data on the psychological impacts of long-term space missions on astronauts.",
     "Being a space scientist, could you enlighten me on the latest research on how zero gravity affects the human body?",
@@ -947,8 +947,8 @@ train_texts.extend([
     "I specialize in space electromechanical systems and am interested in electromechanical systems developed for health support in space environments.",
     "As a space manufacturing expert, I need information on manufacturing practices and materials that are health-safe for use in space.",
 
-    
-#### Health data from COMMUNITY space field
+
+    # Health data from COMMUNITY space field
     "Working in aerospace, our team is looking for information on the effects of zero gravity on human health.",
     "As students of astronomy, we need insights on health precautions for future space travel.",
     "Our group, focused on satellite technology, is interested in understanding the health implications of prolonged exposure to cosmic radiation.",
@@ -1021,7 +1021,7 @@ train_texts.extend([
     "Working in space telematics, we need protocols for the telematic transmission of health data from space to Earth.",
 
 
-#### Health data from INDIVIDUAL climate field
+    # Health data from INDIVIDUAL climate field
     "Working in climate science, I need information on how global warming is affecting public health.",
     "As a meteorologist, I'm seeking data on the impact of extreme weather events on mental health.",
     "Being in climate policy, could you provide insights on how healthcare policies adapt to climate-related health issues?",
@@ -1094,7 +1094,7 @@ train_texts.extend([
     "As a specialist in climate and scenario planning, I need tools and methodologies for scenario planning that integrate climate and health considerations.",
 
 
-#### Health data from COMMUNITY climate field
+    # Health data from COMMUNITY climate field
     "As a team of climate scientists, we are researching the effects of climate change on public health and need the latest data.",
     "Our meteorology group is looking for information regarding the health impacts of extreme weather events.",
     "In our environmental health unit, we require resources on how pollution and air quality affect respiratory health.",
@@ -1167,7 +1167,7 @@ train_texts.extend([
     "In our work on climate and housing, we require information on designing healthy and climate-resilient housing.",
 
 
-#### Health data from INDIVIDUAL health field
+    # Health data from INDIVIDUAL health field
     "As a medical researcher, I need information regarding new developments in cancer treatments.",
     "Working as a nurse, I would like to learn more about emerging infectious diseases and prevention methods.",
     "In my role as a healthcare policy analyst, can you provide the latest data on mental health trends?",
@@ -1240,7 +1240,7 @@ train_texts.extend([
     "As an obstetrician-gynecologist, I am interested in the best practices for women's reproductive health and childbirth.",
 
 
-#### Health data from COMMUNITY health field
+    # Health data from COMMUNITY health field
     "Our medical research team is looking for more information regarding the latest advancements in preventive healthcare.",
     "As a group of public health students, we are seeking data on the effectiveness of community health initiatives.",
     "Working in the field of mental health, our team needs access to recent studies about depression and anxiety treatment options.",
@@ -1313,109 +1313,107 @@ train_texts.extend([
     "We're a group of health system analysts looking for data on health system performance and improvement strategies."
 ])
 
-socialField_labels = []
-useAPI_labels = []
-socialContext_labels = []
+social_field_labels = []
+use_api_labels = []
+social_context_labels = []
 
-spaceField_label = {"cats": {"Space": 1.0, "Climate": 0.0, "Health": 0.0}}
-climateField_label = {"cats": {"Space": 0.0, "Climate": 1.0, "Health": 0.0}}
-healthField_label = {"cats": {"Space": 0.0, "Climate": 0.0, "Health": 1.0}}
+space_field_label = {"cats": {"Space": 1.0, "Climate": 0.0, "Health": 0.0}}
+climate_field_label = {"cats": {"Space": 0.0, "Climate": 1.0, "Health": 0.0}}
+health_field_label = {"cats": {"Space": 0.0, "Climate": 0.0, "Health": 1.0}}
 
-nasaAPI_label = {"cats": {"NASA": 1.0, "Weather": 0.0, "Health": 0.0}}
-weatherAPI_label = {"cats": {"NASA": 0.0, "Weather": 1.0, "Health": 0.0}}
-healthAPI_label = {"cats": {"NASA": 0.0, "Weather": 0.0, "Health": 1.0}}
+nasa_api_label = {"cats": {"NASA": 1.0, "Weather": 0.0, "Health": 0.0}}
+weather_api_label = {"cats": {"NASA": 0.0, "Weather": 1.0, "Health": 0.0}}
+health_api_label = {"cats": {"NASA": 0.0, "Weather": 0.0, "Health": 1.0}}
 
 individual_label = {"cats": {"Individual": 1.0, "Community": 0.0}}
 community_label = {"cats": {"Individual": 0.0, "Community": 1.0}}
 
-
-
 # Space data from INDIVIDUAL space field
-socialField_labels.extend([spaceField_label] * 70)
-useAPI_labels.extend([nasaAPI_label] * 70)
-socialContext_labels.extend([individual_label] * 70)
+social_field_labels.extend([space_field_label] * 70)
+use_api_labels.extend([nasa_api_label] * 70)
+social_context_labels.extend([individual_label] * 70)
 
 # Space data from COMMUNITY space field
-socialField_labels.extend([spaceField_label] * 70)
-useAPI_labels.extend([nasaAPI_label] * 70)
-socialContext_labels.extend([community_label] * 70)
+social_field_labels.extend([space_field_label] * 70)
+use_api_labels.extend([nasa_api_label] * 70)
+social_context_labels.extend([community_label] * 70)
 
 # Space data from INDIVIDUAL climate field
-socialField_labels.extend([climateField_label] * 70)
-useAPI_labels.extend([nasaAPI_label] * 70)
-socialContext_labels.extend([individual_label] * 70)
+social_field_labels.extend([climate_field_label] * 70)
+use_api_labels.extend([nasa_api_label] * 70)
+social_context_labels.extend([individual_label] * 70)
 
 # Space data from COMMUNITY climate field
-socialField_labels.extend([climateField_label] * 70)
-useAPI_labels.extend([nasaAPI_label] * 70)
-socialContext_labels.extend([community_label] * 70)
+social_field_labels.extend([climate_field_label] * 70)
+use_api_labels.extend([nasa_api_label] * 70)
+social_context_labels.extend([community_label] * 70)
 
 # Space data from INDIVIDUAL health field
-socialField_labels.extend([healthField_label] * 70)
-useAPI_labels.extend([nasaAPI_label] * 70)
-socialContext_labels.extend([individual_label] * 70)
+social_field_labels.extend([health_field_label] * 70)
+use_api_labels.extend([nasa_api_label] * 70)
+social_context_labels.extend([individual_label] * 70)
 
 # Space data from COMMUNITY health field
-socialField_labels.extend([healthField_label] * 70)
-useAPI_labels.extend([nasaAPI_label] * 70)
-socialContext_labels.extend([community_label] * 70)
+social_field_labels.extend([health_field_label] * 70)
+use_api_labels.extend([nasa_api_label] * 70)
+social_context_labels.extend([community_label] * 70)
 
 # Climate data from INDIVIDUAL space field
-socialField_labels.extend([spaceField_label] * 70)
-useAPI_labels.extend([weatherAPI_label] * 70)
-socialContext_labels.extend([individual_label] * 70)
+social_field_labels.extend([space_field_label] * 70)
+use_api_labels.extend([weather_api_label] * 70)
+social_context_labels.extend([individual_label] * 70)
 
 # Climate data from COMMUNITY space field
-socialField_labels.extend([spaceField_label] * 70)
-useAPI_labels.extend([weatherAPI_label] * 70)
-socialContext_labels.extend([community_label] * 70)
+social_field_labels.extend([space_field_label] * 70)
+use_api_labels.extend([weather_api_label] * 70)
+social_context_labels.extend([community_label] * 70)
 
 # Climate data from INDIVIDUAL climate field
-socialField_labels.extend([climateField_label] * 70)
-useAPI_labels.extend([weatherAPI_label] * 70)
-socialContext_labels.extend([individual_label] * 70)
+social_field_labels.extend([climate_field_label] * 70)
+use_api_labels.extend([weather_api_label] * 70)
+social_context_labels.extend([individual_label] * 70)
 
 # Climate data from COMMUNITY climate field
-socialField_labels.extend([climateField_label] * 70)
-useAPI_labels.extend([weatherAPI_label] * 70)
-socialContext_labels.extend([community_label] * 70)
+social_field_labels.extend([climate_field_label] * 70)
+use_api_labels.extend([weather_api_label] * 70)
+social_context_labels.extend([community_label] * 70)
 
 # Climate data from INDIVIDUAL health field
-socialField_labels.extend([healthField_label] * 70)
-useAPI_labels.extend([weatherAPI_label] * 70)
-socialContext_labels.extend([individual_label] * 70)
+social_field_labels.extend([health_field_label] * 70)
+use_api_labels.extend([weather_api_label] * 70)
+social_context_labels.extend([individual_label] * 70)
 
 # Climate data from COMMUNITY health field
-socialField_labels.extend([healthField_label] * 70)
-useAPI_labels.extend([weatherAPI_label] * 70)
-socialContext_labels.extend([community_label] * 70)
+social_field_labels.extend([health_field_label] * 70)
+use_api_labels.extend([weather_api_label] * 70)
+social_context_labels.extend([community_label] * 70)
 
 # Health data from INDIVIDUAL space field
-socialField_labels.extend([spaceField_label] * 70)
-useAPI_labels.extend([healthAPI_label] * 70)
-socialContext_labels.extend([individual_label] * 70)
+social_field_labels.extend([space_field_label] * 70)
+use_api_labels.extend([health_api_label] * 70)
+social_context_labels.extend([individual_label] * 70)
 
 # Health data from COMMUNITY space field
-socialField_labels.extend([spaceField_label] * 70)
-useAPI_labels.extend([healthAPI_label] * 70)
-socialContext_labels.extend([community_label] * 70)
+social_field_labels.extend([space_field_label] * 70)
+use_api_labels.extend([health_api_label] * 70)
+social_context_labels.extend([community_label] * 70)
 
 # Health data from INDIVIDUAL climate field
-socialField_labels.extend([climateField_label] * 70)
-useAPI_labels.extend([healthAPI_label] * 70)
-socialContext_labels.extend([individual_label] * 70)
+social_field_labels.extend([climate_field_label] * 70)
+use_api_labels.extend([health_api_label] * 70)
+social_context_labels.extend([individual_label] * 70)
 
 # Health data from COMMUNITY climate field
-socialField_labels.extend([climateField_label] * 70)
-useAPI_labels.extend([healthAPI_label] * 70)
-socialContext_labels.extend([community_label] * 70)
+social_field_labels.extend([climate_field_label] * 70)
+use_api_labels.extend([health_api_label] * 70)
+social_context_labels.extend([community_label] * 70)
 
 # Health data from INDIVIDUAL health field
-socialField_labels.extend([healthField_label] * 70)
-useAPI_labels.extend([healthAPI_label] * 70)
-socialContext_labels.extend([community_label] * 70)
+social_field_labels.extend([health_field_label] * 70)
+use_api_labels.extend([health_api_label] * 70)
+social_context_labels.extend([community_label] * 70)
 
 # Health data from COMMUNITY health field
-socialField_labels.extend([healthField_label] * 70)
-useAPI_labels.extend([healthAPI_label] * 70)
-socialContext_labels.extend([community_label] * 70)
+social_field_labels.extend([health_field_label] * 70)
+use_api_labels.extend([health_api_label] * 70)
+social_context_labels.extend([community_label] * 70)

@@ -2,26 +2,38 @@ import random
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 
-from input_analyzer import setup_model, run
+import input_analyzer
+import input_analyzer_v2
 from ml_model import train_texts
 
 app = Flask(__name__)
 CORS(app)
 
-field_nlp, occupation_nlp = setup_model()
+field_nlp, occupation_nlp = input_analyzer.setup_models()
+social_field_nlp, use_api_nlp, social_context_nlp = input_analyzer_v2.setup_models()
 
 
-@app.route("/api/predict", methods=["POST"])
+@app.route("/api/v1/predict", methods=["POST"])
 def predict():
     try:
         data = request.get_json()
         query = data["query"]
-        return run(query, field_nlp, occupation_nlp)
+        return input_analyzer.run(query, field_nlp, occupation_nlp)
     except Exception as e:
         return jsonify({"error": str(e)})
 
 
-@app.route("/api/random-train-texts", methods=["GET"])
+@app.route("/api/v2/predict", methods=["POST"])
+def predict():
+    try:
+        data = request.get_json()
+        query = data["query"]
+        return input_analyzer_v2.run(query, social_field_nlp, use_api_nlp, social_context_nlp)
+    except Exception as e:
+        return jsonify({"error": str(e)})
+
+
+@app.route("/api/v1/random-train-texts", methods=["GET"])
 def random_train_texts():
     try:
         n = int(request.args.get('n', 1))

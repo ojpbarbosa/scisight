@@ -32,7 +32,7 @@ def train_model(train_texts, train_labels):
     return nlp
 
 
-def setup_model():
+def setup_models():
     field_nlp = train_model(train_texts, field_labels)
     occupation_nlp = train_model(train_texts, occupation_labels)
     return field_nlp, occupation_nlp
