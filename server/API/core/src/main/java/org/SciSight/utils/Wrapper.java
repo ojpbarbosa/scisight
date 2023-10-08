@@ -10,7 +10,6 @@ import java.util.Optional;
 @Component
 @RequiredArgsConstructor
 public class Wrapper {
-
     public Optional<DataItem> convert(Weather weatherObject) {
         return Optional.ofNullable(DataItem.builder().weather(weatherObject).build());
     }
