@@ -417,42 +417,42 @@ train_texts.extend([
     "Studying glaciers today. They're like, 'We're melting!', and I'm like, 'Hold on, I'm trying to save you!'"
 ])
 
-prof_labels = []
+occupation_labels = []
 
 # adding 50 workers
 worker_label = {"cats": {"Worker": 1.0, "Scientist": 0.0}}
-prof_labels.extend([worker_label] * 50)
+occupation_labels.extend([worker_label] * 50)
 
 # adding 50 scientists
 scientist_label = {"cats": {"Worker": 0.0, "Scientist": 1.0}}
-prof_labels.extend([scientist_label] * 50)
+occupation_labels.extend([scientist_label] * 50)
 
 # repeting the process as needed
-prof_labels.extend([worker_label] * 50)
-prof_labels.extend([scientist_label] * 50)
-prof_labels.extend([worker_label] * 50)
-prof_labels.extend([scientist_label] * 50)
-prof_labels.extend([worker_label] * 50)
-prof_labels.extend([scientist_label] * 50)
+occupation_labels.extend([worker_label] * 50)
+occupation_labels.extend([scientist_label] * 50)
+occupation_labels.extend([worker_label] * 50)
+occupation_labels.extend([scientist_label] * 50)
+occupation_labels.extend([worker_label] * 50)
+occupation_labels.extend([scientist_label] * 50)
 
-study_labels = []
+field_labels = []
 
 # adding 100 ecology
 ecology_label = {"cats": {"Ecology": 1.0,
                           "Space": 0.0, "Health": 0.0, "Climate": 0.0}}
-study_labels.extend([ecology_label] * 100)
+field_labels.extend([ecology_label] * 100)
 
 # adding 100 space
 space_label = {"cats": {"Ecology": 0.0,
                         "Space": 1.0, "Health": 0.0, "Climate": 0.0}}
-study_labels.extend([space_label] * 100)
+field_labels.extend([space_label] * 100)
 
 # adding 100 health
 health_label = {"cats": {"Ecology": 0.0,
                          "Space": 0.0, "Health": 1.0, "Climate": 0.0}}
-study_labels.extend([health_label] * 100)
+field_labels.extend([health_label] * 100)
 
 # adding 100 climate
 climate_label = {"cats": {"Ecology": 0.0,
                           "Space": 0.0, "Health": 0.0, "Climate": 1.0}}
-study_labels.extend([climate_label] * 100)
+field_labels.extend([climate_label] * 100)

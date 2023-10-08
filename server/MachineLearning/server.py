@@ -8,7 +8,7 @@ from ml_model import train_texts
 app = Flask(__name__)
 CORS(app)
 
-nlp_study, nlp_prof = setup_model()
+field_nlp, occupation_nlp = setup_model()
 
 
 @app.route("/api/predict", methods=["POST"])
@@ -16,7 +16,7 @@ def predict():
     try:
         data = request.get_json()
         query = data["query"]
-        return run(query, nlp_study, nlp_prof)
+        return run(query, field_nlp, occupation_nlp)
     except Exception as e:
         return jsonify({"error": str(e)})
 
