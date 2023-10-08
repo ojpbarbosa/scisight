@@ -31,7 +31,7 @@ def random_train_texts():
 
         random_texts = random.sample(train_texts, n)
 
-        return jsonify({"random_texts": random_texts})
+        return jsonify(random_texts)
 
     except ValueError as e:
         return jsonify({"error": "Provide a valid integer value for n"})
