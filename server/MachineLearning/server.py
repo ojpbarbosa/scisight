@@ -82,61 +82,43 @@ def v2_texts():
         elif ["individual", "community"].count(context) == 0:
             return jsonify({"error": "Invalid context"})
 
-        match (field, api, context):
-            case ("space", "nasa", "individual"):
-                sample_texts = ml_model_v2.space_from_individual_space
-            case ("space", "nasa", "community"):
-                sample_texts = ml_model_v2.space_from_community_space
-            # can be space from space and space form health
-            case ("space", "weather", "individual"):
-                # concatening space from individual climate with space from individual health since health api is not implemented
-                sample_texts = ml_model_v2.space_from_individual_climate
-                sample_texts.extend(
-                    ml_model_v2.climate_from_individual_space)
-                sample_texts.extend(
-                    ml_model_v2.space_from_individual_health)
-            case ("space", "weather", "community"):
-                # same as above, but for climate community
-                sample_texts = ml_model_v2.space_from_community_climate
-                sample_texts.extend(
-                    ml_model_v2.climate_from_community_space
-                )
-                sample_texts.extend(
-                    ml_model_v2.space_from_community_health)
-            case ("climate", "nasa", "individual"):
-                sample_texts = ml_model_v2.climate_from_individual_space
-            case ("climate", "nasa", "community"):
-                sample_texts = ml_model_v2.climate_from_community_space
-            case ("climate", "weather", "individual"):
-                sample_texts = ml_model_v2.climate_from_individual_climate
-                sample_texts.extend(
-                    ml_model_v2.health_from_individual_climate
-                )
-                sample_texts.extend(
-                    ml_model_v2.climate_from_individual_health)
-            case ("climate", "weather", "community"):
-                sample_texts = ml_model_v2.climate_from_community_climate
-                sample_texts.extend(
-                    ml_model_v2.health_from_community_climate
-                )
-                sample_texts.extend(
-                    ml_model_v2.climate_from_community_health)
-            case ("health", "nasa", "individual"):
-                sample_texts = ml_model_v2.health_from_individual_space
-            case ("health", "nasa", "community"):
-                sample_texts = ml_model_v2.health_from_community_space
-            case ("health", "weather", "individual"):
-                sample_texts = ml_model_v2.health_from_individual_health
-                sample_texts.extend(
-                    ml_model_v2.health_from_individual_space)
-                sample_texts.extend(
-                    ml_model_v2.health_from_individual_climate)
-            case ("health", "weather", "community"):
-                sample_texts = ml_model_v2.health_from_community_health
-                sample_texts.extend(
-                    ml_model_v2.health_from_community_space)
-                sample_texts.extend(
-                    ml_model_v2.health_from_community_climate)
+        # match-case python>=3.10 is ridiculous
+        if field == "space" and api == "nasa" and context == "individual":
+            sample_texts = ml_model_v2.space_from_individual_space
+        elif field == "space" and api == "nasa" and context == "community":
+            sample_texts = ml_model_v2.space_from_community_space
+        elif field == "space" and api == "weather" and context == "individual":
+            sample_texts = ml_model_v2.space_from_individual_climate
+            sample_texts.extend(ml_model_v2.climate_from_individual_space)
+            sample_texts.extend(ml_model_v2.space_from_individual_health)
+        elif field == "space" and api == "weather" and context == "community":
+            sample_texts = ml_model_v2.space_from_community_climate
+            sample_texts.extend(ml_model_v2.climate_from_community_space)
+            sample_texts.extend(ml_model_v2.space_from_community_health)
+        elif field == "climate" and api == "nasa" and context == "individual":
+            sample_texts = ml_model_v2.climate_from_individual_space
+        elif field == "climate" and api == "nasa" and context == "community":
+            sample_texts = ml_model_v2.climate_from_community_space
+        elif field == "climate" and api == "weather" and context == "individual":
+            sample_texts = ml_model_v2.climate_from_individual_climate
+            sample_texts.extend(ml_model_v2.health_from_individual_climate)
+            sample_texts.extend(ml_model_v2.climate_from_individual_health)
+        elif field == "climate" and api == "weather" and context == "community":
+            sample_texts = ml_model_v2.climate_from_community_climate
+            sample_texts.extend(ml_model_v2.health_from_community_climate)
+            sample_texts.extend(ml_model_v2.climate_from_community_health)
+        elif field == "health" and api == "nasa" and context == "individual":
+            sample_texts = ml_model_v2.health_from_individual_space
+        elif field == "health" and api == "nasa" and context == "community":
+            sample_texts = ml_model_v2.health_from_community_space
+        elif field == "health" and api == "weather" and context == "individual":
+            sample_texts = ml_model_v2.health_from_individual_health
+            sample_texts.extend(ml_model_v2.health_from_individual_space)
+            sample_texts.extend(ml_model_v2.health_from_individual_climate)
+        elif field == "health" and api == "weather" and context == "community":
+            sample_texts = ml_model_v2.health_from_community_health
+            sample_texts.extend(ml_model_v2.health_from_community_space)
+            sample_texts.extend(ml_model_v2.health_from_community_climate)
 
         return jsonify(most_related_phrases(sample_texts, input_text, n))
 
