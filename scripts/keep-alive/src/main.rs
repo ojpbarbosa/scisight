@@ -1,6 +1,6 @@
 #![allow(dead_code)]
 use serde::{Deserialize, Serialize};
-use std::collections::HashMap;
+use std::{collections::HashMap, time::Instant};
 
 const ML_SERVICE_URL: &str = "https://ml.scisight.earth";
 const CORE_SERVICE_URL: &str = "https://core.scisight.earth";
@@ -99,6 +99,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
         println!("\nFetching random queries from {}", ML_SERVICE_URL);
 
+        let mut start_time = Instant::now();
         let random_queries = reqwest::get(format!(
             "{}/api/v2/texts?n={}",
             ML_SERVICE_URL, RANDOM_QUERIES_COUNT
@@ -106,12 +107,14 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .await?
         .json::<Vec<String>>()
         .await?;
+        let mut elapsed_time = start_time.elapsed();
 
         now = chrono::Local::now();
         println!(
-            "Succesfully fetched {} random queries at {}",
+            "Succesfully fetched {} random queries at {} ({} ms)",
             RANDOM_QUERIES_COUNT,
-            now.format("%H:%M:%S").to_string()
+            now.format("%H:%M:%S").to_string(),
+            elapsed_time.as_millis()
         );
 
         println!("\nPredicting random query using {}", ML_SERVICE_URL);
@@ -122,6 +125,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
         let client = reqwest::Client::new();
 
+        start_time = Instant::now();
         let predicted_data = client
             .post(format!("{}/api/v2/predict", ML_SERVICE_URL))
             .header("content-type", "application/json")
@@ -129,11 +133,13 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             .json(&predict_query)
             .send()
             .await?;
+        elapsed_time = start_time.elapsed();
 
         now = chrono::Local::now();
         println!(
-            "Succesfully predicted random query at {}",
-            now.format("%H:%M:%S").to_string()
+            "Succesfully predicted random query at {} ({} ms)",
+            now.format("%H:%M:%S").to_string(),
+            elapsed_time.as_millis()
         );
 
         let mut predicted_query = predicted_data.json::<PredictedMetadata>().await?;
@@ -156,6 +162,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             }
         }
 
+        start_time = Instant::now();
         let search_data = client
             .post(format!(
                 "{}/search/{}",
@@ -167,14 +174,16 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             .json(&predicted_query)
             .send()
             .await?;
+        elapsed_time = start_time.elapsed();
 
         let _search_result = search_data.json::<SearchResult>().await?;
 
         now = chrono::Local::now();
         println!(
-            "\nSuccesfully fetched random query search results from {} at {}",
+            "\nSuccesfully fetched random query search results from {} at {} ({} ms)\n",
             CORE_SERVICE_URL,
-            now.format("%H:%M:%S").to_string()
+            now.format("%H:%M:%S").to_string(),
+            elapsed_time.as_millis()
         );
 
         tokio::time::sleep(tokio::time::Duration::from_secs(KEEP_ALIVE_SECONDS_TIMEOUT)).await;
