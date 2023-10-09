@@ -8,7 +8,7 @@ import { api } from '@/library/api'
 import Loading from './components/loading'
 import Results from './components/results'
 
-const RELATED_QUERIES = 3
+export const RELATED_QUERIES = 3
 
 export default function Search({
   searchParams
@@ -49,7 +49,7 @@ export default function Search({
 
     async function fetchSearchResult() {
       setSearchResult((await api.core.search(predictedQuery)) as SearchResult)
-      setLoading(false)
+      setTimeout(() => setLoading(false), 4 * 1000) // 4 seconds
     }
 
     fetchSearchResult()
@@ -69,24 +69,20 @@ export default function Search({
         RELATED_QUERIES * 2
       )) as string[]
 
-      const newRelatedQueries = [...similarQueries]
+      const newRelatedQueries = Array.from(new Set([...similarQueries]))
 
       randomQueries.forEach((query) => {
-        if (!newRelatedQueries.includes(query) && newRelatedQueries.length < RELATED_QUERIES * 2)
-          newRelatedQueries.push(query)
+        if (!newRelatedQueries.includes(query)) newRelatedQueries.push(query)
       })
 
-      setRelatedQueries(newRelatedQueries)
-
-      // setTimeout(() => {
-      // }, 3.5 * 1000) // 3.5 seconds
+      setRelatedQueries(newRelatedQueries.slice(0, RELATED_QUERIES * 2))
     }
 
     fetchRelatedQueries()
   }, [predictedQuery])
 
   return loading ? (
-    <Loading predictedQuery={predictedQuery} />
+    <Loading query={query as string} predictedQuery={predictedQuery} />
   ) : (
     <Results
       predictedQuery={predictedQuery}

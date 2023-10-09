@@ -6,7 +6,6 @@ import Link from 'next/link'
 
 import { api } from '@/library/api'
 import { Skeleton } from '@/components/ui/skeleton'
-import { Button } from '@/components/ui/button'
 
 const TRENDING_TOPICS = 5
 
@@ -22,24 +21,25 @@ export default function TrendingTopics() {
   }, [])
 
   return (
-    <div className="flex flex-col gap-y-6 sm:gap-y-2 mt-10 px-2">
+    <div className="flex flex-col gap-y-8 sm:gap-y-4">
       {trendingTopics.length > 0
         ? trendingTopics.map((topic) => (
-            <div key={topic} className="flex flex-row items-center mt-2 gap-x-2">
+            <div
+              key={topic}
+              className="flex flex-col items-start gap-y-1 sm:flex-row sm:items-center gap-x-2"
+            >
               <span className="text-2xl">
-                {Math.random() < 0.7 ? <IoMdTrendingUp /> : <IoMdTrendingDown />}
+                {Math.random() < 0.6 ? <IoMdTrendingUp /> : <IoMdTrendingDown />}
               </span>
-              <Button variant="link" className="text-base h-0 p-0" asChild>
-                <Link href={{ pathname: '/search', query: { query: topic }}} className="font-normal">
-                  {topic}
-                </Link>
-              </Button>
+              <Link href={{ pathname: '/search', query: { query: topic } }} className="font-normal">
+                {topic}
+              </Link>
             </div>
           ))
         : [...Array(TRENDING_TOPICS)].map((_, i) => (
-            <div className="flex flex-row gap-x-2 gap-y-6 sm:gap-y-0 mt-2" key={i}>
+            <div className="flex w-full flex-col sm:flex-row gap-2 sm:gap-y-0" key={i}>
               <Skeleton className="w-6 h-6 rounded-full" />
-              <Skeleton className="w-56 sm:w-[36rem] h-6 rounded-full" />
+              <Skeleton className="w-full sm:h-6 h-20 rounded-md" />
             </div>
           ))}
     </div>

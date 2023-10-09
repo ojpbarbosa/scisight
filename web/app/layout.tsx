@@ -4,7 +4,6 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 
-import { Toaster } from '@/components/ui/toaster'
 import Providers from './providers'
 import Icon from '@/public/favicon.ico'
 import Logo from '@/components/layout/logo'
@@ -27,7 +26,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Actions />
           {children}
         </Providers>
-        <Toaster />
         <Analytics />
       </body>
     </html>

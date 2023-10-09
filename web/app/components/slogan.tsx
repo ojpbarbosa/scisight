@@ -10,7 +10,7 @@ export default function Slogan() {
   return (
     <h1
       className={cn(
-        'text-transparent sm:p-0 p-2 sm:max-w-[28rem] max-w-[20rem] sm:min-w-[28rem] min-w-[20rem] h-[20rem] sm:mb-0 sm:w-1/4 bg-clip-text bg-gradient-to-br from-[#5CF825] via-[#0D9A9A] to-[#FA00FF] text-4xl sm:text-6xl',
+        'text-transparent sm:max-w-[28rem] p-1 w-full sm:min-w-[28rem] min-w-[20rem] h-[13rem] sm:h-[10rem] md:h-[13rem] xl:h-[20rem] sm:mb-0 sm:w-1/4 bg-clip-text bg-gradient-to-br from-[#5CF825] via-[#0D9A9A] to-[#FA00FF] text-4xl md:text-5xl 2xl:text-6xl',
         spaceGrotesk.className
       )}
     >

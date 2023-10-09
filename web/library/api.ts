@@ -77,10 +77,10 @@ export const api = {
       field = field.toLowerCase()
       api = api.toLowerCase()
       context = context.toLowerCase()
-      input = input.toLowerCase()
+      input = input.replace('.', ' ').replace(',', ' ').replace('?', ' ').replace('!', ' ').trim()
 
       const response = await fetch(
-        `${ML_URL}/api/v2/texts?n=${n}&field=${field}&api=${api}&context=${context}&input=${input}`
+        `${ML_URL}/api/v2/texts?n=${n}&field=${field}&api=${api}&context=${context}&input=${input}${input.toUpperCase()}${input.toLowerCase()}`
       )
 
       if (!response.ok) return undefined
