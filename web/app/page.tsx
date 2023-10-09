@@ -1,8 +1,8 @@
-import Slogan from '@/components/home/slogan'
-import SearchForm from '@/components/home/search-form'
-import TrendingTopics from '@/components/home/trending-topics'
+import Slogan from './components/slogan'
+import SearchForm from './components/search-form'
+import TrendingTopics from './components/trending-topics'
 
-export default function Home() {
+export default async function Home() {
   return (
     <main className="h-screen flex justify-center flex-col items-center sm:mt-0 mt-16">
       <div className="flex items-center sm:justify-center sm:flex-row flex-col gap-x-6">

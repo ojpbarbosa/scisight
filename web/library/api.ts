@@ -1,4 +1,5 @@
-const ML_URL = 'https://ml.scisight.earth'
+// const ML_URL = 'https://ml.scisight.earth'
+const ML_URL = 'http://localhost:5000'
 const CORE_URL = 'https://core.scisight.earth'
 
 export type PredictedMetadata = {
@@ -23,9 +24,9 @@ export type SearchResult = {
       }
     }[]
     title: string
-    updated: Date
+    updated: string
   }
-  nasa: {
+  nasaEvents: {
     title: string
     description: string
     link: string
@@ -33,11 +34,11 @@ export type SearchResult = {
       id: string
       title: string
       geometries: {
-        date: Date
+        date: string
         type: string
         coordinates: [number, number]
-      }
-    }
+      }[]
+    }[]
   }
   relatedScientificInfo: string[]
   bestAPIsOptions: {
@@ -62,9 +63,26 @@ export const api = {
       return data
     },
     fetchRandomTrainTexts: async (version: 'v1' | 'v2', n: number) => {
-      const response = await fetch(`${ML_URL}/api/${version}/random-train-texts?n=${n}`, {
+      const response = await fetch(`${ML_URL}/api/${version}/texts?n=${n}`, {
         method: 'GET'
       })
+
+      if (!response.ok) return undefined
+
+      const data: string[] = await response.json()
+
+      return data.length === 1 ? data[0] : data
+    },
+    fetchRelatedQueries: async (predictedQuery: PredictedMetadata, n: number) => {
+      let { field, api, context, input } = predictedQuery
+      field = field.toLowerCase()
+      api = api.toLowerCase()
+      context = context.toLowerCase()
+      input = input.toLowerCase()
+
+      const response = await fetch(
+        `${ML_URL}/api/v2/texts?n=${n}&field=${field}&api=${api}&context=${context}&input=${input}`
+      )
 
       if (!response.ok) return undefined
 

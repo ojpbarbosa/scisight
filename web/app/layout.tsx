@@ -7,7 +7,7 @@ import { Toaster } from '@/components/ui/toaster'
 import Providers from './providers'
 import Icon from '@/public/favicon.ico'
 import Logo from '@/components/layout/logo'
-import ThemeSwitcher from '@/components/layout/theme-switcher'
+import Actions from '@/components/layout/actions'
 
 const inter = Inter({ subsets: ['latin'], fallback: ['sans-serif'] })
 
@@ -23,7 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={inter.className}>
         <Logo />
         <Providers>
-          <ThemeSwitcher />
+          <Actions />
           {children}
         </Providers>
         <Toaster />

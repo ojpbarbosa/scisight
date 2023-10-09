@@ -5,7 +5,7 @@ import { Badge } from '@/components/ui/badge'
 export function getContextMetadata(context: string) {
   return (
     <Badge
-      className="rounded-full text-base font-normal bg-neutral-400/10 dark:text-neutral-400 dark:bg-[#202020]/40 py-1 px-3"
+      className="rounded-full text-base font-normal bg-neutral-400/10 text-foreground dark:bg-[#202020]/40 py-1 px-3"
       variant="outline"
     >
       <span className="text-2xl">{context === 'Individual' ? <BiUser /> : <BiGroup />}</span>
@@ -17,7 +17,7 @@ export function getContextMetadata(context: string) {
 export function getFieldMetadata(field: string) {
   return (
     <Badge
-      className="rounded-full text-base font-normal bg-neutral-400/10 dark:text-neutral-400 dark:bg-[#202020]/40 py-1 px-3 flex flex-row items-center justify-center"
+      className="rounded-full text-base font-normal bg-neutral-400/10 text-foreground dark:bg-[#202020]/40 py-1 px-3 flex flex-row items-center justify-center"
       variant="outline"
     >
       <span className="text-2xl">
