@@ -1,5 +1,4 @@
-// const ML_URL = 'https://ml.scisight.earth'
-const ML_URL = 'http://localhost:5000'
+const ML_URL = 'https://ml.scisight.earth'
 const CORE_URL = 'https://core.scisight.earth'
 
 export type PredictedMetadata = {
