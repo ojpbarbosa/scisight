@@ -1,5 +1,5 @@
 <div align="center">
-  <img alt="SciSight logo" src="https://github.com/ojpbarbosa/scisight/assets/79005271/71339963-3f0a-457f-ab81-ecda3bd85b88">
+  <img alt="SciSight logo" src="https://github.com/ojpbarbosa/scisight/assets/79005271/1d0687a7-c676-4c3e-99b7-d82490789b4d">
 </div>
 
 <div align="center">
@@ -23,8 +23,8 @@
 SciSight was built by [João Pedro Ferreira Barbosa](https://github.com/ojpbarbosa), [Víctor Augusto de Paula](https://github.com/vaup), [Samira Abud Moisés](https://www.linkedin.com/in/samira-abud-mois%C3%A9s/), [Gabriel Willian Bartmanovicz](https://github.com/obielwb), [Matheus Vieira](https://github.com/Matheus-Vieira2601), and Gustavo Bonilha da Silva.
 
 ## References
-- [SciSight full article](https://www.spaceappschallenge.org/2023/find-a-team/scisight/?tab=project)
 - [NASA International Space Apps Challenge 2023](https://www.spaceappschallenge.org/)
+- [SciSight article](https://www.spaceappschallenge.org/2023/find-a-team/scisight/?tab=project)
 - [Machine learning](https://wikipedia.org/wiki/Machine_learning)
 - [Natural language processing](https://wikipedia.org/wiki/Natural_language_processing)
 
