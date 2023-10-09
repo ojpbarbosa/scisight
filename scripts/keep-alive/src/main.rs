@@ -51,13 +51,13 @@ struct Feature {
 #[derive(Debug, Deserialize)]
 struct Properties {
     #[serde(rename = "areaDesc")]
-    area_desc: String,
-    severity: String,
-    urgency: String,
-    event: String,
-    headline: String,
-    description: String,
-    instruction: String,
+    area_desc: Option<String>,
+    severity: Option<String>,
+    urgency: Option<String>,
+    event: Option<String>,
+    headline: Option<String>,
+    description: Option<String>,
+    instruction: Option<String>,
 }
 
 #[derive(Debug, Deserialize)]
@@ -93,7 +93,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     loop {
         let mut now = chrono::Local::now();
         println!(
-            "\nKeeping \x1b[92mSciSight\x1b[0m alive on {}",
+            "Keeping \x1b[92mSciSight\x1b[0m alive on {}",
             now.format("%B %-d, %Y, %H:%M").to_string()
         );
 
