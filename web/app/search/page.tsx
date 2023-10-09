@@ -8,7 +8,7 @@ import { api } from '@/library/api'
 import Loading from './components/loading'
 import Results from './components/results'
 
-export const RELATED_QUERIES = 3
+const RELATED_QUERIES = 3
 
 export default function Search({
   searchParams

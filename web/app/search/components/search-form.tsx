@@ -14,7 +14,8 @@ import { Button } from '@/components/ui/button'
 import { cn } from '@/library/utilities'
 import type { PredictedMetadata } from '@/library/api'
 import { api, type SearchResult } from '@/library/api'
-import { RELATED_QUERIES } from '../page'
+
+const RELATED_QUERIES = 3
 
 const formSchema = z.object({
   query: z
