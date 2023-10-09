@@ -297,7 +297,7 @@ export default function Results({
             </div>
             {nasaEvents ? (
               <>
-                <div className="flex relative items-center w-full max-w-screen flex-col justify-center">
+                <div className="flex relative items-center w-full max-w-screen flex-col gap-y-4 justify-center">
                   <div className="absolute top-0 right-0 z-10 text-2xl sm:text-4xl">
                     <Popover>
                       <PopoverTrigger>
@@ -407,7 +407,7 @@ export default function Results({
               </>
             ) : (
               <>
-                <div className="flex relative items-center w-full max-w-screen flex-col justify-center">
+                <div className="flex relative items-center w-full max-w-screen flex-col gap-y-4 justify-center">
                   <div className="absolute top-0 right-0 z-10 text-2xl sm:text-4xl">
                     <Popover>
                       <PopoverTrigger>

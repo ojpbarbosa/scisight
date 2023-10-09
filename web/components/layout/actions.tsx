@@ -18,7 +18,7 @@ export default function Actions() {
       </a>
       <div className="flex flex-row gap-x-4 items-center text-2xl">
         <Link
-          href="https://github.com/ojpbarbosa/github"
+          href="https://github.com/ojpbarbosa/scisight"
           referrerPolicy="no-referrer"
           target="_blank"
         >
