@@ -1,5 +1,5 @@
-train_texts = [
-    # Space data from INDIVIDUAL space field
+space_from_individual_space = [
+
     "Can you provide me with recent satellite data? I'm conducting research in space science.",
     "I need information on the current positions of satellites for my studies in aerospace.",
     "For my research in astrobiology, could you share the latest discoveries about life in space?",
@@ -69,10 +69,10 @@ train_texts = [
     "Please provide the latest findings on the search for extraterrestrial intelligence for my SETI research.",
     "For my studies in space vehicle design, could you provide recent advancements in spacecraft structures and materials?",
     "Can you share the latest research on space biotechnology for my work in space life sciences?",
-    "I need the recent developments in space medicine for my ongoing research in astronaut health and performance.",
+    "I need the recent developments in space medicine for my ongoing research in astronaut health and performance."
+]
 
-
-    # Space data from COMMUNITY space field
+space_from_community_space = [
     "We're a group of researchers studying satellite technology; can you provide us with recent developments in satellite communication?",
     "My team and I work on astrobiology. Could you share recent discoveries regarding potential life on Mars?",
     "We're studying the effects of space travel on the human body and would appreciate any recent data you have on this.",
@@ -142,10 +142,10 @@ train_texts = [
     "We are a team working on space electronics; could you provide recent technologies and developments?",
     "Our group focuses on space propulsion commercialization; could you provide recent market trends and analysis?",
     "We're studying space policy and international cooperation; could you provide recent developments and agreements?",
-    "Our research team is working on space instrument development; could you share recent instruments developed and their applications?",
+    "Our research team is working on space instrument development; could you share recent instruments developed and their applications?"
+]
 
-
-    # Space data from INDIVIDUAL climate field
+space_from_individual_climate = [
     "Can you provide recent satellite data? I'm conducting climate research and need information on atmospheric conditions observed from space.",
     "I'm a meteorologist studying long-term climate patterns. Could I have the latest data on space weather?",
     "I work in climatology. Could you share the latest images of Earth taken from space?",
@@ -215,10 +215,10 @@ train_texts = [
     "Can you provide recent satellite imagery of wildfires for my research on climate-induced fires and their environmental impact?",
     "I need space-based data on dust storms and sand storms for my study on climate impacts on arid and semi-arid regions.",
     "Could you provide the latest data on space-based observations of polar auroras for my research on geomagnetic activity and climate?",
-    "I'm researching climate impact assessment and need satellite images and data for evaluating climate change effects on various regions.",
+    "I'm researching climate impact assessment and need satellite images and data for evaluating climate change effects on various regions."
+]
 
-
-    # Space data from COMMUNITY climate field
+space_from_community_climate = [
     "Our team of climatologists needs the most recent data on solar radiation for ongoing research. Can you provide it?",
     "We are environmental scientists researching the impact of space weather on Earth's climate and would appreciate your latest findings.",
     "Our group works on climate change mitigation and is interested in recent satellite data regarding Earth's atmosphere.",
@@ -288,10 +288,10 @@ train_texts = [
     "We work on studying the impact of climate change on the hydrological cycle and need recent satellite data on global precipitation and evaporation rates.",
     "Our research group focuses on climate change effects on the Antarctic and requires recent satellite observations of the Antarctic ice sheet.",
     "We are studying the effects of urban heat islands and need recent satellite imagery of temperature variations in urban areas.",
-    "As a group working on climate change resilience, we require recent satellite data on areas vulnerable to climate change impacts.",
+    "As a group working on climate change resilience, we require recent satellite data on areas vulnerable to climate change impacts."
+]
 
-
-    # Space data from INDIVIDUAL health field
+space_from_individual_health = [
     "Can you provide the latest data on how space travel impacts human health? I'm working in the field of health sciences.",
     "I study the psychological effects of isolation. Could you share findings on astronaut mental health during space missions?",
     "I'm researching the physiological changes in the human body in space; can I have recent data from astronauts' health monitoring?",
@@ -361,9 +361,10 @@ train_texts = [
     "Can you provide recent research on the impact of isolation and confinement on astronauts' social and familial relationships?",
     "I work in medical anthropology and am interested in the cultural and societal aspects of health and illness in space travel.",
     "Could you provide information on the ethical considerations and dilemmas in healthcare and medical research in space?",
-    "I study behavioral health and am interested in habits, routines, and lifestyle practices of astronauts in space.",
+    "I study behavioral health and am interested in habits, routines, and lifestyle practices of astronauts in space."
+]
 
-    # Space data from COMMUNITY health field
+space_from_community_health = [
     "Our healthcare team requires information on how extended space travel impacts human physiology; could you provide recent findings?",
     "We are a group of psychologists studying the mental health of astronauts during missions; can you share your latest research?",
     "Our team is researching the effects of zero gravity on muscle atrophy; we need recent data from space agencies.",
@@ -433,10 +434,9 @@ train_texts = [
     "We're a group of healthcare professionals studying the potential use of space travel for healthcare treatment and therapy.",
     "Our team is focused on palliative care considerations for long-term space missions; could you provide information?",
     "As a group researching epidemiology, we are interested in disease prevention and control measures for space missions.",
-    "We are a healthcare research team studying health promotion strategies for astronauts; could you provide insights?",
+    "We are a healthcare research team studying health promotion strategies for astronauts; could you provide insights?",]
 
-
-    # Climate data from INDIVIDUAL space field
+climate_from_individual_space = [
     "As an astronomer, I'm researching on atmospheric changes; can you provide data on how climate change affects the clarity of the night sky?",
     "Working in satellite technology, I'd like to understand the impacts of climate change on satellite communication.",
     "As a space scientist, I'm interested in the similarities between Earth's climate dynamics and those of other planets.",
@@ -507,9 +507,9 @@ train_texts = [
     "Working on space thermal systems, I need information on how climate change affects the thermal control systems used for spacecraft and satellites.",
     "I'm studying spacecraft attitude control and would appreciate insights into how climate change influences the attitude control systems used for spacecraft and satellites.",
     "As a researcher in space mission design, I require data on how climate change affects the design considerations for future space missions.",
+]
 
-
-    # Climate data from COMMUNITY space field
+climate_from_community_space = [
     "My team and I are working on a satellite project and we need updated data on the Earth's atmospheric composition; can you assist?",
     "We're a group of astrophysicists seeking recent information on solar radiation's effects on the climate for our research.",
     "Our research group in astrobiology needs current climate data to understand potential extraterrestrial life conditions.",
@@ -580,9 +580,9 @@ train_texts = [
     "My team is currently working with space stuff and we need climate info",
     "Our group is studying space and society and we need eath's climate data",
     "My colleagues and I are studying space stuff and we need eath's climate info",
+]
 
-
-    # Climate data from INDIVIDUAL climate field
+climate_from_individual_climate = [
     "As a climate scientist, I'm seeking data on the recent trends in global temperature anomalies; could you provide this information?",
     "Working in atmospheric sciences, I would appreciate any updated data on carbon dioxide concentrations in the atmosphere.",
     "I'm studying oceanography, and I need the most recent information on sea level rise due to climate change.",
@@ -652,10 +652,10 @@ train_texts = [
     "For my research on climate change and migration, I need data on how climate change is affecting migration patterns and how migrants and host communities are being affected.",
     "I'm studying the impact of climate change on global governance and need information on how international institutions are addressing and being affected by climate change.",
     "For my work on climate change and environmental justice, I need data on how marginalized and vulnerable communities are being affected by and responding to climate change.",
-    "As a researcher studying the impact of climate change on human security, I need data on how climate change is affecting security risks and how security policies are adapting.",
+    "As a researcher studying the impact of climate change on human security, I need data on how climate change is affecting security risks and how security policies are adapting."]
 
 
-    # Climate data from COMMUNITY climate field
+climate_from_community_climate = [
     "We are climatologists working on atmospheric dynamics and need precise data on how space weather influences Earth's climate. Can you assist?",
     "Our meteorology team requires updated data on the impact of solar radiation on global temperatures for our ongoing climate study.",
     "As researchers in climate modeling, we need information on how cosmic events might influence climate variables to improve our predictions.",
@@ -725,10 +725,10 @@ train_texts = [
     "Our team focused on climate and education requires information on educational approaches to teaching about space weather and climate change.",
     "We're involved in climate and labor, needing data on how space weather events affect labor productivity and working conditions.",
     "Our group studying climate and leisure requires information on how leisure activities and industries are influenced by space weather and climate.",
-    "We work on climate and digital technology, needing data on how digital technologies are used to monitor and respond to space weather and climate change.",
+    "We work on climate and digital technology, needing data on how digital technologies are used to monitor and respond to space weather and climate change.",]
 
 
-    # Climate data from INDIVIDUAL health field
+climate_from_individual_health = [
     "As a public health researcher, I'm looking for data on how climate change is affecting the spread of vector-borne diseases; could you assist?",
     "I'm a healthcare provider in need of information on the impacts of extreme weather events on community health services.",
     "Working on mental health, I am seeking data on how climate change-induced stresses and anxieties are affecting mental health statistics.",
@@ -798,10 +798,10 @@ train_texts = [
     "I work in healthcare finance and need data on the economic costs and financial implications of health issues related to climate change.",
     "I am a vision care provider looking for information on how climate change affects eye health and vision care.",
     "As a patient navigator, I need resources to assist patients in navigating health challenges and services related to climate change.",
-    "Working in medical imaging, I am interested in how climate change might indirectly affect diagnostic imaging practices and interpretations.",
+    "Working in medical imaging, I am interested in how climate change might indirectly affect diagnostic imaging practices and interpretations.",]
 
 
-    # Climate data from COMMUNITY health field.
+climate_from_community_health = [
     "We are a team of epidemiologists and need data on how space weather influences climate patterns that affect the spread of infectious diseases.",
     "As healthcare providers, we require information on how climate variations caused by space weather impact patient health.",
     "Our group of nutritionists is researching how space weather affecting climate influences the nutritional value of crops.",
@@ -872,9 +872,9 @@ train_texts = [
     "Our team of health and innovation researchers needs information on health innovation trends and opportunities arising from climate changes caused by space weather.",
     "As a team of health and artificial intelligence researchers, we require data on AI applications for addressing health challenges posed by climate changes caused by space weather.",
     "Our group working on health and social innovation needs information on social innovation for health in response to climate changes due to space weather.",
+]
 
-
-    # Health data from INDIVIDUAL space field
+health_from_individual_space = [
     "Working in astrophysics, I am inquiring about the effects of space travel on human health. Can you provide relevant information?",
     "As an aerospace engineer, I need data on the psychological impacts of long-term space missions on astronauts.",
     "Being a space scientist, could you enlighten me on the latest research on how zero gravity affects the human body?",
@@ -945,9 +945,9 @@ train_texts = [
     "As a space cryogenics expert, I'd like to understand the health implications of cryogenic technologies for space travel.",
     "I specialize in space electromechanical systems and am interested in electromechanical systems developed for health support in space environments.",
     "As a space manufacturing expert, I need information on manufacturing practices and materials that are health-safe for use in space.",
+]
 
-
-    # Health data from COMMUNITY space field
+health_from_community_space = [
     "Working in aerospace, our team is looking for information on the effects of zero gravity on human health.",
     "As students of astronomy, we need insights on health precautions for future space travel.",
     "Our group, focused on satellite technology, is interested in understanding the health implications of prolonged exposure to cosmic radiation.",
@@ -1018,9 +1018,9 @@ train_texts = [
     "As researchers in space cybernetics, we seek information on the integration of cybernetic devices for health support in space.",
     "Our space signal processing group requires algorithms for processing health-related signals and data in space.",
     "Working in space telematics, we need protocols for the telematic transmission of health data from space to Earth.",
+]
 
-
-    # Health data from INDIVIDUAL climate field
+health_from_individual_climate = [
     "Working in climate science, I need information on how global warming is affecting public health.",
     "As a meteorologist, I'm seeking data on the impact of extreme weather events on mental health.",
     "Being in climate policy, could you provide insights on how healthcare policies adapt to climate-related health issues?",
@@ -1091,9 +1091,9 @@ train_texts = [
     "I specialize in climate and data science, and I require data on data science applications for understanding and addressing climate-induced health risks.",
     "Being a professional in climate and decision-making, could you provide insights on decision-making processes that consider both climate and health?",
     "As a specialist in climate and scenario planning, I need tools and methodologies for scenario planning that integrate climate and health considerations.",
+]
 
-
-    # Health data from COMMUNITY climate field
+health_from_community_climate = [
     "As a team of climate scientists, we are researching the effects of climate change on public health and need the latest data.",
     "Our meteorology group is looking for information regarding the health impacts of extreme weather events.",
     "In our environmental health unit, we require resources on how pollution and air quality affect respiratory health.",
@@ -1163,10 +1163,10 @@ train_texts = [
     "As a group studying climate and tourism, we need information on promoting healthy and climate-friendly tourism practices.",
     "Our climate financing team requires resources on investing in health adaptation and mitigation projects.",
     "We are a team of researchers focusing on climate-sensitive infrastructure and need data on building infrastructure that supports health and climate adaptation.",
-    "In our work on climate and housing, we require information on designing healthy and climate-resilient housing.",
+    "In our work on climate and housing, we require information on designing healthy and climate-resilient housing."
+]
 
-
-    # Health data from INDIVIDUAL health field
+health_from_individual_health = [
     "As a medical researcher, I need information regarding new developments in cancer treatments.",
     "Working as a nurse, I would like to learn more about emerging infectious diseases and prevention methods.",
     "In my role as a healthcare policy analyst, can you provide the latest data on mental health trends?",
@@ -1237,9 +1237,10 @@ train_texts = [
     "I am a clinical trial coordinator seeking information on the latest clinical trials in oncology.",
     "Could you provide data on innovative approaches and therapies in mental health as a psychotherapist?",
     "As an obstetrician-gynecologist, I am interested in the best practices for women's reproductive health and childbirth.",
+]
 
-
-    # Health data from COMMUNITY health field
+# Health data from COMMUNITY health field
+health_from_community_health = [
     "Our medical research team is looking for more information regarding the latest advancements in preventive healthcare.",
     "As a group of public health students, we are seeking data on the effectiveness of community health initiatives.",
     "Working in the field of mental health, our team needs access to recent studies about depression and anxiety treatment options.",
@@ -1312,6 +1313,21 @@ train_texts = [
     "We're a group of health system analysts looking for data on health system performance and improvement strategies."
 ]
 
+all_lists = [
+    space_from_individual_space, space_from_community_space,
+    space_from_individual_climate, space_from_community_climate,
+    space_from_individual_health, space_from_community_health,
+    climate_from_individual_space, climate_from_community_space,
+    climate_from_individual_climate, climate_from_community_climate,
+    climate_from_individual_health, climate_from_community_health,
+    health_from_individual_space, health_from_community_space,
+    health_from_individual_climate, health_from_community_climate,
+    health_from_individual_health, health_from_community_health
+]
+
+train_texts = []
+[train_texts.extend(list) for list in all_lists]
+
 social_field_labels = []
 use_api_labels = []
 social_context_labels = []
@@ -1356,7 +1372,6 @@ social_context_labels.extend([individual_label] * 70)
 social_field_labels.extend([health_field_label] * 70)
 use_api_labels.extend([nasa_api_label] * 70)
 social_context_labels.extend([community_label] * 70)
-
 # Climate data from INDIVIDUAL space field
 social_field_labels.extend([space_field_label] * 70)
 use_api_labels.extend([weather_api_label] * 70)

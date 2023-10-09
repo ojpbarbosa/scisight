@@ -6,6 +6,7 @@ import input_analyzer_v1
 import ml_model_v1
 import input_analyzer_v2
 import ml_model_v2
+from util import most_related_phrases
 
 app = Flask(__name__)
 CORS(app)
@@ -39,10 +40,10 @@ def v2_predict():
         return jsonify({"error": str(e)})
 
 
-@app.route("/api/v1/random-train-texts", methods=["GET"])
-def v1_random_train_texts():
+@app.route("/api/v1/texts", methods=["GET"])
+def v1_texts():
     try:
-        n = int(request.args.get('n', 1))
+        n = int(request.args.get("n", 1))
 
         if n > len(ml_model_v1.train_texts):
             return jsonify({"error": "n is greater than the number of available training texts"})
@@ -57,17 +58,87 @@ def v1_random_train_texts():
         return jsonify({"error": str(e)})
 
 
-@app.route("/api/v2/random-train-texts", methods=["GET"])
-def v2_random_train_texts():
+@app.route("/api/v2/texts", methods=["GET"])
+def v2_texts():
     try:
-        n = int(request.args.get('n', 1))
+        n = int(request.args.get("n", 1))
 
         if n > len(ml_model_v2.train_texts):
             return jsonify({"error": "n is greater than the number of available training texts"})
 
-        random_texts = random.sample(ml_model_v2.train_texts, n)
+        field = request.args.get("field", None)
+        api = request.args.get("api", None)
+        context = request.args.get("context", None)
+        input_text = request.args.get("input", None)
 
-        return jsonify(random_texts)
+        if field is None or context is None or api is None or input_text is None:
+            return jsonify(random.sample(ml_model_v2.train_texts, n))
+
+        sample_texts = []
+        if ["space", "climate", "health"].count(field) == 0:
+            return jsonify({"error": "Invalid field"})
+        elif ["nasa", "weather"].count(api) == 0:
+            return jsonify({"error": "Invalid api"})
+        elif ["individual", "community"].count(context) == 0:
+            return jsonify({"error": "Invalid context"})
+
+        match (field, api, context):
+            case ("space", "nasa", "individual"):
+                sample_texts = ml_model_v2.space_from_individual_space
+            case ("space", "nasa", "community"):
+                sample_texts = ml_model_v2.space_from_community_space
+            # can be space from space and space form health
+            case ("space", "weather", "individual"):
+                # concatening space from individual climate with space from individual health since health api is not implemented
+                sample_texts = ml_model_v2.space_from_individual_climate
+                sample_texts.extend(
+                    ml_model_v2.climate_from_individual_space)
+                sample_texts.extend(
+                    ml_model_v2.space_from_individual_health)
+            case ("space", "weather", "community"):
+                # same as above, but for climate community
+                sample_texts = ml_model_v2.space_from_community_climate
+                sample_texts.extend(
+                    ml_model_v2.climate_from_community_space
+                )
+                sample_texts.extend(
+                    ml_model_v2.space_from_community_health)
+            case ("climate", "nasa", "individual"):
+                sample_texts = ml_model_v2.climate_from_individual_space
+            case ("climate", "nasa", "community"):
+                sample_texts = ml_model_v2.climate_from_community_space
+            case ("climate", "weather", "individual"):
+                sample_texts = ml_model_v2.climate_from_individual_climate
+                sample_texts.extend(
+                    ml_model_v2.health_from_individual_climate
+                )
+                sample_texts.extend(
+                    ml_model_v2.climate_from_individual_health)
+            case ("climate", "weather", "community"):
+                sample_texts = ml_model_v2.climate_from_community_climate
+                sample_texts.extend(
+                    ml_model_v2.health_from_community_climate
+                )
+                sample_texts.extend(
+                    ml_model_v2.climate_from_community_health)
+            case ("health", "nasa", "individual"):
+                sample_texts = ml_model_v2.health_from_individual_space
+            case ("health", "nasa", "community"):
+                sample_texts = ml_model_v2.health_from_community_space
+            case ("health", "weather", "individual"):
+                sample_texts = ml_model_v2.health_from_individual_health
+                sample_texts.extend(
+                    ml_model_v2.health_from_individual_space)
+                sample_texts.extend(
+                    ml_model_v2.health_from_individual_climate)
+            case ("health", "weather", "community"):
+                sample_texts = ml_model_v2.health_from_community_health
+                sample_texts.extend(
+                    ml_model_v2.health_from_community_space)
+                sample_texts.extend(
+                    ml_model_v2.health_from_community_climate)
+
+        return jsonify(most_related_phrases(sample_texts, input_text, n))
 
     except ValueError as e:
         return jsonify({"error": "Provide a valid integer value for n"})
