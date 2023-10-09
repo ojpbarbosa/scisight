@@ -1,5 +1,5 @@
 <div align="center">
-  <img alt="SciSight logo" src="https://github.com/ojpbarbosa/scisight/assets/79005271/1d0687a7-c676-4c3e-99b7-d82490789b4d">
+  <img alt="SciSight logo" src="https://github.com/ojpbarbosa/scisight/assets/79005271/fd27b2bc-8b1e-481c-a1f9-0a56739290fe">
 </div>
 
 <div align="center">
@@ -15,7 +15,7 @@
 
 ## Architecture
 <div align="center">
-  <img alt="SciSight draw.io architecture diagram" src="https://github.com/ojpbarbosa/scisight/assets/79005271/01f6c011-3294-45a8-8559-f766b8c6fda0">
+  <img alt="SciSight draw.io architecture diagram" src="https://github.com/ojpbarbosa/scisight/assets/79005271/a479194e-f257-4821-b372-e55735ac2808">
 </div>
 
 ## Team
