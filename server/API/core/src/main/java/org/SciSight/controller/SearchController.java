@@ -15,7 +15,6 @@ import static io.micrometer.core.instrument.Metrics.counter;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/search")
-@CrossOrigin(origins = "*")
 public class SearchController {
 
     private final DataItemService dataItemService;
