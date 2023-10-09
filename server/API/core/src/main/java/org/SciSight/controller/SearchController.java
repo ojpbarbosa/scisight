@@ -19,6 +19,7 @@ public class SearchController {
 
     private final DataItemService dataItemService;
 
+    @CrossOrigin
     @PostMapping("/{fieldOfStudy}")
     public ResponseEntity<DataItem> get(@PathVariable("fieldOfStudy") final String field,
                                         @RequestBody RequestModel requestModel) {

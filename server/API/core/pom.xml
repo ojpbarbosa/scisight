@@ -156,11 +156,6 @@
             <version>1.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
-      <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-webmvc</artifactId>
-        <version>6.0.9</version> <!-- use a versão apropriada -->
-      </dependency>
 
 
     </dependencies>
