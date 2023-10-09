@@ -26,7 +26,7 @@ export default function Home() {
             <PopoverContent className="dark:bg-[#202020]/40 bg-neutral-400/10 backdrop-blur-lg filter mr-10 sm:mr-0">
               <p>
                 SciSight keeps track of recent and most accessed queries. Click on a trending query
-                to search about it!
+                to search for it!
               </p>
             </PopoverContent>
           </Popover>

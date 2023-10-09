@@ -33,7 +33,7 @@ const ACCENT_COLORS = [
 ]
 
 const Globe = dynamic(() => import('react-globe.gl'), {
-  loading: () => <p>Loading...</p>,
+  loading: () => <p className="text-muted-foreground">Loading globe...</p>,
   ssr: false
 })
 
@@ -222,7 +222,7 @@ export default function Results({
               </div>
             </div>
             <div className="columns-2 grid grid-cols-1 md:grid-cols-2 gap-4">
-              {bestAPIsOptions.map((option, i) => {
+              {fisherYatesShuffle(bestAPIsOptions).map((option, i) => {
                 const [agencyAbbreviation, agencyName] = option.api.split(' - ')
 
                 return (
@@ -261,7 +261,6 @@ export default function Results({
                   </Popover>
                 </div>
               </h2>
-
               <p className="font-normal text-muted-foreground text-base w-full">
                 SciSight{`'`}s machine learning model identified that the query can be used in order
                 to result in societal benefits through the following suggestions.
@@ -425,7 +424,6 @@ export default function Results({
                     globeImageUrl={`/images/globe/${globeImageUrl}`}
                     rendererConfig={{ preserveDrawingBuffer: true }}
                     animateIn
-                    objectLat={-100}
                   />
                   <div className="flex flex-row gap-x-2">
                     <Button
