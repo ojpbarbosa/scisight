@@ -11,7 +11,7 @@
   <img src="https://img.shields.io/github/license/ojpbarbosa/scisight.svg" alt="GitHub">
 </div>
 
-# SciSight
+## SciSight
 [SciSight](https://www.scisight.earth) is an innovative platform developed during the [NASA International Space Apps Challenge 2023](https://www.spaceappschallenge.org/) that dynamically aggregates scientific information from government agencies, providing users with a highly accurate research experience and simplifying open science data for everyone. Its search algorithm delivers personalized and specific information to users on their topic of interest. This unique approach simplifies access to and comprehension of dense information related to social and ecological knowledge, making data retrieval more efficient and democratic through [machine learning](https://wikipedia.org/wiki/Machine_learning), [natural language processing](https://wikipedia.org/wiki/Natural_language_processing) and other specific algorithms. Check out SciSight architecture bellow or the [full article](https://www.spaceappschallenge.org/2023/find-a-team/scisight/?tab=project) for more details.
 
 ## Architecture
@@ -38,3 +38,6 @@ SciSight was built by [João Pedro Ferreira Barbosa](https://github.com/ojpbarbo
   - [spaCy](https://spacy.io/)
 - [Rust](https://www.rust-lang.org/)
   - [reqwest](https://github.com/seanmonstar/reqwest)
+
+## License
+SciSight is licensed under [CC BY-NC-SA 4.0 DEED - Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/).
