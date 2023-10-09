@@ -8,7 +8,6 @@
   <a href="https://github.com/ojpbarbosa/scisight/commits">
     <img src="https://img.shields.io/github/last-commit/ojpbarbosa/scisight.svg" alt="GitHub last commit">
   </a>
-  <img src="https://img.shields.io/github/license/ojpbarbosa/scisight.svg" alt="GitHub">
 </div>
 
 ## SciSight
