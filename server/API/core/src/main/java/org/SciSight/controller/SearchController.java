@@ -6,12 +6,7 @@ import org.SciSight.model.DataItem;
 import org.SciSight.model.RequestModel;
 import org.SciSight.service.DataItemService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
 
 import static io.micrometer.core.instrument.Metrics.counter;
 
@@ -20,6 +15,7 @@ import static io.micrometer.core.instrument.Metrics.counter;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/search")
+@CrossOrigin(origins = "*")
 public class SearchController {
 
     private final DataItemService dataItemService;
