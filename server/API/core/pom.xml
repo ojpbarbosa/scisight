@@ -157,9 +157,9 @@
             <scope>compile</scope>
         </dependency>
       <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-web</artifactId>
-        <version>3.1.4</version>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-webmvc</artifactId>
+        <version>6.0.9</version> <!-- use a versão apropriada -->
       </dependency>
 
 
