@@ -6,9 +6,10 @@ import Image from 'next/image'
 import { DateTime } from 'luxon'
 import { FiExternalLink, FiHelpCircle } from 'react-icons/fi'
 import Link from 'next/link'
-import Globe from 'react-globe.gl'
 import { useRouter } from 'next/navigation'
 import { scaleOrdinal } from 'd3'
+import { useMediaQuery } from 'react-responsive'
+import dynamic from 'next/dynamic'
 
 import { Skeleton } from '@/components/ui/skeleton'
 import SearchForm from './search-form'
@@ -16,7 +17,6 @@ import type { PredictedMetadata, SearchResult } from '@/library/api'
 import { cn } from '@/library/utilities'
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
 import BestApisOptionsChart from './best-apis-options-chart'
-import useWindowSize from '@/hooks/use-window-size'
 import { Button } from '@/components/ui/button'
 
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'] })
@@ -31,6 +31,11 @@ const ACCENT_COLORS = [
   '#FFA28B',
   '#939AFF'
 ]
+
+const Globe = dynamic(() => import('react-globe.gl'), {
+  loading: () => <p>Loading...</p>,
+  ssr: false
+})
 
 type GlobeLabel = {
   id: string
@@ -60,7 +65,7 @@ export default function Results({
 
   const { push } = useRouter()
 
-  const { width } = useWindowSize()
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
 
   console.log(weather)
 
@@ -280,8 +285,8 @@ export default function Results({
               <>
                 <div className="flex items-center w-full max-w-screen flex-col justify-center">
                   <Globe
-                    width={width! > 480 ? 720 : width! - 80}
-                    height={width! > 480 ? 720 : width! - 80}
+                    width={isTabletOrMobile ? 320 : 720}
+                    height={isTabletOrMobile ? 320 : 720}
                     backgroundColor="rgba(0,0,0,0)"
                     globeImageUrl={`/images/globe/${globeImageUrl}`}
                     rendererConfig={{ preserveDrawingBuffer: true }}
@@ -317,7 +322,7 @@ export default function Results({
                       variant="outline"
                       onClick={() => setGlobeImageUrl('pale-blue-dot-texture.jpg')}
                     >
-                      Realistc
+                      Realistic
                     </Button>
                     <Button
                       className="h-10 text-base hover:text-[#0D9A9A] text-[#0D9A9A] border-[#0D9A9A] bg-neutral-400/10 hover:bg-[#0D9A9A]/20 hover:dark:bg-[#0D9A9A]/20"
@@ -394,8 +399,8 @@ export default function Results({
               <>
                 <div className="flex items-center w-full max-w-screen flex-col justify-center">
                   <Globe
-                    width={width! > 480 ? 720 : width! - 80}
-                    height={width! > 480 ? 720 : width! - 80}
+                    width={isTabletOrMobile ? 320 : 720}
+                    height={isTabletOrMobile ? 320 : 720}
                     backgroundColor="rgba(0,0,0,0)"
                     globeImageUrl={`/images/globe/${globeImageUrl}`}
                     rendererConfig={{ preserveDrawingBuffer: true }}
@@ -406,7 +411,7 @@ export default function Results({
                       variant="outline"
                       onClick={() => setGlobeImageUrl('pale-blue-dot-texture.jpg')}
                     >
-                      Realistc
+                      Realistic
                     </Button>
                     <Button
                       className="h-10 text-base hover:text-[#0D9A9A] text-[#0D9A9A] border-[#0D9A9A] bg-neutral-400/10 hover:bg-[#0D9A9A]/20 hover:dark:bg-[#0D9A9A]/20"
