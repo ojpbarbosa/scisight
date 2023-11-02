@@ -8,6 +8,7 @@ import Providers from './providers'
 import Icon from '@/public/favicon.ico'
 import Logo from '@/components/layout/logo'
 import Actions from '@/components/layout/actions'
+import { cn } from '@/library/utilities'
 
 const inter = Inter({ subsets: ['latin'], fallback: ['sans-serif'] })
 
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en-us">
-      <body className={inter.className}>
+      <body className={cn('scale-95', inter.className)}>
         <Logo />
         <Providers>
           <Actions />
