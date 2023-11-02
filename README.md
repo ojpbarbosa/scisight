@@ -34,7 +34,7 @@ SciSight's methodology involves collecting data from government agencies, an int
 ### Conclusion
 SciSight plays a crucial role in promoting equal access to scientific information, tackling barriers such as technical language and lack of internet access. It empowers people to understand and act on scientific issues, contributing to a democratic society and a more equal and sustainable future.
 
-## Time
+## Team
 SciSight was developed and built by a dedicated team made up of:
 - [João Pedro Ferreira Barbosa](https://github.com/ojpbarbosa)
 - [Víctor Augusto de Paula](https://github.com/vaup)
@@ -43,13 +43,13 @@ SciSight was developed and built by a dedicated team made up of:
 - [Matheus Vieira](https://github.com/Matheus-Vieira2601)
 - Gustavo Bonilha da Silva
 
-## Referências
+## References
 - [NASA International Space Apps Challenge 2023](https://www.spaceappschallenge.org/)
 - [SciSight Article](https://www.spaceappschallenge.org/2023/find-a-team/scisight/?tab=project)
 - [Machine Learning](https://wikipedia.org/wiki/Machine_learning)
 - [Natural Language Processing](https://wikipedia.org/wiki/Natural_language_processing)
 
-## Tecnologias
+## Technologies
 - [Java](https://www.java.com/)
   - [Spring Boot](https://spring.io/)
 - [TypeScript](https://www.typescriptlang.org/)
